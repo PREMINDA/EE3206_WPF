@@ -1,0 +1,174 @@
+﻿<Page x:Class="EE3206_WPF.Pages.AdminDashBoard.AdminDashBoard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:components="clr-namespace:EE3206_WPF.Components"
+      mc:Ignorable="d" 
+      d:DesignHeight="720" d:DesignWidth="1280"
+      Title="AdminDashBoard">
+
+    <Grid Background="#262537">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="80"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="380"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Foreground="#804bf5"  VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="60" Grid.Row="0" FontFamily="Akrobat SemiBold">
+                AUTO MOTIVE
+            </TextBlock>
+            <Border CornerRadius="42 " Margin="26,16,66,16" Background="#743fbf" Grid.Row="1">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="110"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Ellipse Height="80" Width="80" Margin="6,4,24,4">
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="/assets/User.png"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+                    <TextBlock Margin="10 0 15 0" VerticalAlignment="Center"  FontSize="40" Grid.Column="1" Text="USERNAME"></TextBlock>
+                </Grid>
+            </Border>
+            <Separator Grid.Row="2" Margin="0,0,0,10" Width="400" Background="Silver" Height="5" VerticalAlignment="Center"/>
+            <Grid Margin="40 0 0 0" Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Margin="0 12" Style="{DynamicResource Nav_Btn}">
+                    <Grid Width="420" Height="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Path Fill="{Binding ElementName=bt5,Path=Foreground}" Height="30" Width="30" Data="{StaticResource home}"/>
+                        <TextBlock x:Name="bt5" Foreground="White" FontSize="30" HorizontalAlignment="left" VerticalAlignment="Center" Grid.Column="1">HOME</TextBlock>
+                    </Grid>
+                </Button>
+                <Button Grid.Row="1" Margin="0 12" Style="{DynamicResource Nav_Btn}">
+                    <Grid Width="420" Height="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Path Fill="{Binding ElementName=bt6,Path=Foreground}" Height="30" Width="30" Data="{StaticResource Gear}"/>
+                        <TextBlock Foreground="White" x:Name="bt6" FontSize="30" HorizontalAlignment="left" VerticalAlignment="Center" Grid.Column="1">PROVID SERVISES</TextBlock>
+                    </Grid>
+                </Button>
+                <Button Grid.Row="2" Margin="0 12" Style="{DynamicResource Nav_Btn}">
+                    <Grid Width="420" Height="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Path Fill="{Binding ElementName=bt7,Path=Foreground}" Height="30" Width="30" Data="{StaticResource Shop}"/>
+                        <TextBlock  x:Name="bt7" Foreground="White" FontSize="30" HorizontalAlignment="left" VerticalAlignment="Center" Grid.Column="1">SELLING ITEMS</TextBlock>
+                    </Grid>
+                </Button>
+                <Button Grid.Row="3" Margin="0 12" Style="{DynamicResource Nav_Btn}">
+                    <Grid Width="420" Height="60">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Path Fill="{Binding ElementName=bt8,Path=Foreground}" Height="30" Width="30" Data="{StaticResource User}"/>
+                        <TextBlock x:Name="bt8" Foreground="White" FontSize="30" HorizontalAlignment="left" VerticalAlignment="Center" Grid.Column="1">CUSROMER ORDERS</TextBlock>
+                    </Grid>
+                </Button>
+            </Grid>
+            <Rectangle Width="280" Margin="80" Grid.Row="4">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="/assets/logo.png"></ImageBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+        <Grid Background="#2e2d42" Grid.Column="1"></Grid>
+        <Grid Grid.Column="2" Width="60">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="100"/>
+                
+                
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <components:SmallButton Grid.Row="1">
+                <components:SmallButton.Icon>
+                    <Path Fill="White" Height="40" Width="40" Data="{StaticResource logout}"/>
+                </components:SmallButton.Icon>
+                <components:SmallButton.IconTitle>
+                    <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                        Logout
+                    </TextBlock>
+                </components:SmallButton.IconTitle>
+            </components:SmallButton>
+            <components:SmallButton Grid.Row="2" >
+                <components:SmallButton.Icon>
+                    <Path Fill="White" Height="40" Width="40" Data="{StaticResource User}"/>
+                </components:SmallButton.Icon>
+                <components:SmallButton.IconTitle>
+                    <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                        Customers
+                    </TextBlock>
+                </components:SmallButton.IconTitle>
+            </components:SmallButton>
+            <components:SmallButton Grid.Row="3" >
+                <components:SmallButton.Icon>
+                    <Path Fill="White" Height="40" Width="40" Data="{StaticResource Admin}"/>
+                </components:SmallButton.Icon>
+                <components:SmallButton.IconTitle>
+                    <TextBlock  Foreground="White" TextAlignment="Center" Width="60" Margin="0,5,0,0" HorizontalAlignment="Center" Grid.Row="8">
+               Admin
+                    </TextBlock>
+                </components:SmallButton.IconTitle>
+            </components:SmallButton>
+            <components:SmallButton Grid.Row="4">
+                <components:SmallButton.Icon>
+                    <Path Fill="White" Height="40" Width="40" Data="{StaticResource plus}"/>
+                </components:SmallButton.Icon>
+                <components:SmallButton.IconTitle>
+                    <TextBlock  Foreground="White" TextAlignment="Center" Width="60" Margin="0,5,0,0" HorizontalAlignment="Center" Grid.Row="8">
+               Add new<LineBreak/>Admin
+                    </TextBlock>
+                </components:SmallButton.IconTitle>
+            </components:SmallButton>
+            <components:SmallButton Grid.Row="5">
+                <components:SmallButton.Icon>
+                    <Path Fill="White" Height="40" Width="40" Data="{StaticResource addnew}"/>
+                </components:SmallButton.Icon>
+                <components:SmallButton.IconTitle>
+                    <TextBlock  Foreground="White" TextAlignment="Center" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="10">
+               Add new<LineBreak/>Item
+                    </TextBlock>
+                </components:SmallButton.IconTitle>
+            </components:SmallButton>
+            <components:SmallButton Grid.Row="6">
+                <components:SmallButton.Icon>
+                    <Path Fill="White" Height="40" Width="40" Data="{StaticResource addser}"/>
+                </components:SmallButton.Icon>
+                <components:SmallButton.IconTitle>
+                    <TextBlock  Foreground="White" TextAlignment="Center" Width="60" Margin="0,5,0,0" HorizontalAlignment="Center" Grid.Row="12">
+               Add new<LineBreak/>Servis
+                    </TextBlock>
+                </components:SmallButton.IconTitle>
+            </components:SmallButton>
+        </Grid>
+
+    </Grid> 
+</Page>
