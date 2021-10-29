@@ -24,5 +24,10 @@ namespace EE3206_WPF.Pages.AdminDashBoard
         {
             InitializeComponent();
         }
+
+        public static implicit operator Frame(AdminDashBoard v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

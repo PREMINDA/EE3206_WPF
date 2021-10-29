@@ -4,9 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EE3206_WPF"
+        xmlns:pg="clr-namespace:EE3206_WPF.Pages.AdminDashBoard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="840" Width="1280">
+    <Grid Background="#262537">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Frame Grid.Row="1">
+
+            <Frame.Content>
+                <pg:AdminDashBoard></pg:AdminDashBoard>
+            </Frame.Content>
+        </Frame>
 
     </Grid>
+    
 </Window>

@@ -22,11 +22,6 @@ namespace EE3206_WPF.Components
     {
 
 
-
-        
-
-
-
         public string ButtonTilte
         {
             get { return (string)GetValue(ButtonTilteProperty); }

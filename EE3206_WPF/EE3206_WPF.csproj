@@ -7,15 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="assets\image.jpg" />
-    <None Remove="assets\logo.png" />
     <None Remove="assets\User.png" />
   </ItemGroup>
 
+  <!--<ItemGroup>
+    <None Remove="assets\image.jpg" />
+    <None Remove="assets\logo.png" />
+    <None Remove="assets\User.png" />
+  </ItemGroup>-->
+
   <ItemGroup>
-    <Content Include="assets\image.jpg" />
-    <Content Include="assets\logo.png" />
-    <Content Include="assets\User.png" />
+    <Resource Include="assets\image.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="assets\User.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
