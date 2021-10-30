@@ -30,7 +30,7 @@
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource User}"/>
             </components:LandingPageButton.Icon>
             <components:LandingPageButton.IconTitle>
-                <TextBlock Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                <TextBlock FontSize="32" Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
                         Users
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
@@ -41,7 +41,7 @@
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource Admin}"/>
             </components:LandingPageButton.Icon>
             <components:LandingPageButton.IconTitle>
-                <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                <TextBlock FontSize="32"  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
                         Admin
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
@@ -49,10 +49,10 @@
 
         <components:LandingPageButton Grid.Row="0" Grid.Column="2">
             <components:LandingPageButton.Icon>
-                <Path Fill="White" Height="80" Width="80" Data="{StaticResource addser}"/>
+                <Path Fill="White" Height="80" Width="80" Data="{StaticResource plus}"/>
             </components:LandingPageButton.Icon>
             <components:LandingPageButton.IconTitle>
-                <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                <TextBlock FontSize="32"  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
                         Add Admin
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
@@ -63,7 +63,7 @@
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource addnew}"/>
             </components:LandingPageButton.Icon>
             <components:LandingPageButton.IconTitle>
-                <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                <TextBlock FontSize="32" Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
                         Add Product
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
@@ -74,7 +74,7 @@
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource addser}"/>
             </components:LandingPageButton.Icon>
             <components:LandingPageButton.IconTitle>
-                <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                <TextBlock FontSize="32"  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
                         Add Services
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
@@ -82,10 +82,10 @@
 
         <components:LandingPageButton Grid.Row="1" Grid.Column="1">
             <components:LandingPageButton.Icon>
-                <Path Fill="White" Height="80" Width="80" Data="{StaticResource logout}"/>
+                <Path Fill="White" Height="80" Width="80" Data="{StaticResource delivery}"/>
             </components:LandingPageButton.Icon>
             <components:LandingPageButton.IconTitle>
-                <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                <TextBlock FontSize="32"  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
                         User Orders
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
@@ -93,10 +93,10 @@
 
         <components:LandingPageButton Grid.Row="1" Grid.Column="2">
             <components:LandingPageButton.Icon>
-                <Path Fill="White" Height="80" Width="80" Data="{StaticResource logout}"/>
+                <Path Fill="White" Height="80" Width="80" Data="{StaticResource services}"/>
             </components:LandingPageButton.Icon>
             <components:LandingPageButton.IconTitle>
-                <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                <TextBlock FontSize="32" Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
                         User Services 
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
@@ -107,7 +107,7 @@
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource logout}"/>
             </components:LandingPageButton.Icon>
             <components:LandingPageButton.IconTitle>
-                <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                <TextBlock FontSize="32" Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
                         Home
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
