@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EE3206_WPF.Components;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,12 @@ namespace EE3206_WPF.Pages.AdminDashBoard
         public static implicit operator Frame(AdminDashBoard v)
         {
             throw new NotImplementedException();
+        }
+
+        private void NavClick_User(object sender, RoutedEventArgs e)
+        {
+            var ClickButton = e.OriginalSource as LandingPageButton;
+            NavigationService.Navigate(ClickButton.NavUri);
         }
     }
 }

@@ -19,8 +19,8 @@
         </Style>
         <SolidColorBrush x:Key="Button.Static.Background1" Color="#FFDDDDDD"/>
         <SolidColorBrush x:Key="Button.Static.Border1" Color="White"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background1" Color="#FF6536CB"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border1" Color="Black"/>
         <SolidColorBrush x:Key="Button.Pressed.Background1" Color="#FFC4E5F6"/>
         <SolidColorBrush x:Key="Button.Pressed.Border1" Color="#FF2C628B"/>
         <SolidColorBrush x:Key="Button.Disabled.Background1" Color="#FFF4F4F4"/>
@@ -73,7 +73,7 @@
                 <RowDefinition Height="*"/>
 
             </Grid.RowDefinitions>
-            <Button Grid.Row="0"  Style="{DynamicResource Right_btn}" Margin="10,10,10,10">
+            <Button Grid.Row="0" Click="OnClick"  Style="{DynamicResource Right_btn}" Margin="10,10,10,10">
                 <ContentControl Content="{Binding Icon,ElementName=LandingButton}"></ContentControl>
 
 

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -14,13 +13,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EE3206_WPF.Components
+namespace EE3206_WPF.Pages.testpage
 {
-    public class NavButton : ButtonBase
+    /// <summary>
+    /// Interaction logic for Page1.xaml
+    /// </summary>
+    public partial class Page1 : Page
     {
-        static NavButton()
+        public Page1()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(NavButton), new FrameworkPropertyMetadata(typeof(NavButton)));
+            InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            object p = NavigationCommands.BrowseBack;
+            NavigationService.Navigate(p);
         }
     }
 }

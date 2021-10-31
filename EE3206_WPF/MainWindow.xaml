@@ -11,7 +11,9 @@
             <RowDefinition Height="80"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-      
+        <Frame x:Name="_FrameName" NavigationUIVisibility="Hidden" Grid.Row="1" Source="/Pages/AdminDashBoard/AdminDashBoard.xaml">
+            
+        </Frame>
 
     </Grid>
     

@@ -13,7 +13,8 @@
             <BitmapImage x:Key="LogoPng" UriSource="/assets/logo.png" />
         </ResourceDictionary>
     </Page.Resources>
-    <Grid Background="#262537">
+    
+    <Grid Background="#262537" >
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -25,7 +26,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <components:LandingPageButton Grid.Row="0" Grid.Column="0">
+        <components:LandingPageButton NavClick="NavClick_User" NavUri="/Pages/testpage/Page1.xaml" Grid.Row="0" Grid.Column="0">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource User}"/>
             </components:LandingPageButton.Icon>
@@ -36,7 +37,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton Grid.Row="0" Grid.Column="1">
+        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml"  Grid.Row="0" Grid.Column="1">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource Admin}"/>
             </components:LandingPageButton.Icon>
@@ -47,7 +48,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton Grid.Row="0" Grid.Column="2">
+        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="0" Grid.Column="2">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource plus}"/>
             </components:LandingPageButton.Icon>
@@ -58,7 +59,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton Grid.Row="0" Grid.Column="3">
+        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="0" Grid.Column="3" >
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource addnew}"/>
             </components:LandingPageButton.Icon>
@@ -69,7 +70,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton Grid.Row="1" Grid.Column="0">
+        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="1" Grid.Column="0">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource addser}"/>
             </components:LandingPageButton.Icon>
@@ -80,7 +81,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton Grid.Row="1" Grid.Column="1">
+        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="1" Grid.Column="1">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource delivery}"/>
             </components:LandingPageButton.Icon>
@@ -91,7 +92,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton Grid.Row="1" Grid.Column="2">
+        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="1" Grid.Column="2">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource services}"/>
             </components:LandingPageButton.Icon>
@@ -102,7 +103,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton Grid.Row="1" Grid.Column="3">
+        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="1" Grid.Column="3">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource logout}"/>
             </components:LandingPageButton.Icon>
