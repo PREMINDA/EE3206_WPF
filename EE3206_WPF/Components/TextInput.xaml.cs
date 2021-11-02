@@ -26,6 +26,20 @@ namespace EE3206_WPF.Components
             set { SetValue(IconProperty, value); }
         }
 
+
+
+        public string EnteredValue
+        {
+            get { return (string)GetValue(EnteredValueProperty); }
+            set { SetValue(EnteredValueProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for EnteredValue.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty EnteredValueProperty =
+            DependencyProperty.Register("EnteredValue", typeof(string), typeof(TextInput), new PropertyMetadata(""));
+
+
+
         // Using a DependencyProperty as the backing store for Icon.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty IconProperty =
             DependencyProperty.Register("Icon", typeof(object), typeof(TextInput), new PropertyMetadata(0));

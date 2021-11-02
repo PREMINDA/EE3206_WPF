@@ -48,6 +48,12 @@ namespace EE3206_WPF.Components
             remove { RemoveHandler(ClickEvent, value); }
         }
 
+        public Uri NavUri
+        {
+            get { return (Uri)GetValue(NavUriProperty); }
+            set { SetValue(NavUriProperty, value); }
+        }
+
         public static readonly DependencyProperty IconProperty =
             DependencyProperty.Register("Icon", typeof(object), typeof(LandingPageButton), new PropertyMetadata(0));
 
@@ -59,13 +65,6 @@ namespace EE3206_WPF.Components
         public static readonly DependencyProperty IconTitleProperty =
             DependencyProperty.Register("IconTitle", typeof(object), typeof(LandingPageButton), new PropertyMetadata(0));
 
-
-
-        public Uri NavUri
-        {
-            get { return (Uri)GetValue(NavUriProperty); }
-            set { SetValue(NavUriProperty, value); }
-        }
 
         // Using a DependencyProperty as the backing store for NavUri.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty NavUriProperty =

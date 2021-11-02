@@ -9,9 +9,11 @@
     <Grid Background="#262537">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="83"/>
+            <RowDefinition Height="7"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        <Border Grid.Row="2" Background="#743fbf"></Border>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="40"/>
@@ -26,10 +28,10 @@
                 </Ellipse>
             </Border>
         </Grid>
-        <Frame x:Name="_FrameName" NavigationUIVisibility="Hidden" Grid.Row="2" Source="/Pages/AdminDashBoard/AdminDashBoard.xaml">
-            
+        <Frame x:Name="_FrameName" NavigationUIVisibility="Hidden" Grid.Row="3" Source="/Pages/AdminDashBoard/AdminDashBoard.xaml">
+
         </Frame>
 
     </Grid>
-    
+
 </Window>

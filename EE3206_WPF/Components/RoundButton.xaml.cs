@@ -28,6 +28,15 @@ namespace EE3206_WPF.Components
             set { SetValue(ButtonTilteProperty, value); }
         }
 
+        public static readonly RoutedEvent ClickEvent =
+            EventManager.RegisterRoutedEvent(nameof(Submitclick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(LandingPageButton));
+
+        public event RoutedEventHandler Submitclick
+        {
+            add { AddHandler(ClickEvent, value); }
+            remove { RemoveHandler(ClickEvent, value); }
+        }
+
         // Using a DependencyProperty as the backing store for ButtonTilte.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ButtonTilteProperty =
             DependencyProperty.Register("ButtonTilte", typeof(string), typeof(RoundButton), new PropertyMetadata("asdasd"));
@@ -36,6 +45,11 @@ namespace EE3206_WPF.Components
         public RoundButton()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(ClickEvent));
         }
     }
 }

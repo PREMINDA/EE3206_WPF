@@ -71,7 +71,7 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Button Style="{DynamicResource RoundButton}"  Height="60" Grid.Row="2" Margin="20 0 20 0">
+        <Button Style="{DynamicResource RoundButton}" Click="Button_Click"  Height="60" Grid.Row="2" Margin="20 0 20 0">
             <TextBlock Foreground="White"  FontSize="24" Style="{DynamicResource UserRegister}" Text="{Binding ButtonTilte,ElementName=root}"/>
         </Button>
        

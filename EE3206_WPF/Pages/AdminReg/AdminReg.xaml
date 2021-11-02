@@ -27,12 +27,12 @@
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <TextBlock VerticalAlignment="Center" Foreground="White" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" FontFamily="Montserrat Medium">REGISTER</TextBlock>
-                <components1:TextInput Grid.Row="1" Height="80" Width="550">
+                <components1:TextInput x:Name="UserName"  Grid.Row="1" Height="80" Width="550">
                     <components1:TextInput.Icon>
                         <Path  Data="{StaticResource User}" Width="28"/>
                     </components1:TextInput.Icon>
                 </components1:TextInput>
-                <components1:TextInput Grid.Row="2" Height="80" Width="550">
+                <components1:TextInput x:Name="Email" Grid.Row="2" Height="80" Width="550">
                     <components1:TextInput.Icon>
                         <Path  Data="{StaticResource User}" Width="28"/>
                     </components1:TextInput.Icon>
@@ -47,7 +47,7 @@
                         <Path  Data="{StaticResource User}" Width="28"/>
                     </components1:TextInput.Icon>
                 </components1:TextInput>
-                <components1:RoundButton Grid.Row="5" ButtonTilte="Login" Margin="0,0,0,14" />
+                <components1:RoundButton Submitclick="RoundButton_Submitclick"  Grid.Row="5" ButtonTilte="Login" Margin="0,0,0,14" />
             </Grid>
             
         </Border>

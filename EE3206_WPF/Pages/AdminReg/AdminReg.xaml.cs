@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EE3206_WPF.Database;
+using EE3206_WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,5 +26,20 @@ namespace EE3206_WPF.Pages.AdminReg
         {
             InitializeComponent();
         }
+
+        private void RoundButton_Submitclick(object sender, RoutedEventArgs e)
+        {
+            AdminContext ad = new AdminContext();
+            Admin admin = new Admin()
+            {
+                Name = UserName.EnteredValue,
+                Email = Email.EnteredValue
+                
+            };
+            ad.Admins.Add(admin);
+            ad.SaveChanges();
+        }
+
+
     }
 }
