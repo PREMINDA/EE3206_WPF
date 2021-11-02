@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,32 +15,27 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EE3206_WPF.Pages.AddProduct
+namespace EE3206_WPF.Pages.AddServises
 {
     /// <summary>
-    /// Interaction logic for AddProduct.xaml
+    /// Interaction logic for AddServises.xaml
     /// </summary>
-    public partial class AddProduct : Page
+    public partial class AddServises : Page
     {
         string filePate;
-     
 
-        public AddProduct()
-        {
-            InitializeComponent(); 
-        }
-
+ 
         private void AddBtnClick1(object sender, RoutedEventArgs e)
         {
             MessageBox.Show(System.IO.Directory.GetCurrentDirectory());
             File.Copy(filePate, System.IO.Path.Combine(@"E:\asd", System.IO.Path.GetFileName(filePate)));
-            
+
         }
 
         private void AddImage(object sender, RoutedEventArgs e)
         {
-            
-            try 
+
+            try
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.Multiselect = false;
@@ -52,7 +46,7 @@ namespace EE3206_WPF.Pages.AddProduct
 
                     filePate = openFileDialog.FileName;
                     image1.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-                     
+
 
                 }
 
@@ -61,11 +55,16 @@ namespace EE3206_WPF.Pages.AddProduct
 
 
 
-            } 
-            catch 
-            {
-                
             }
+            catch
+            {
+
+            }
+        }
+
+        public AddServises()
+        {
+            InitializeComponent();
         }
     }
 }

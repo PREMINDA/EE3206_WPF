@@ -70,7 +70,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="1" Grid.Column="0">
+        <components:LandingPageButton NavClick="NavClick_User" NavUri="/Pages/AddServises/AddServises.xaml" Grid.Row="1" Grid.Column="0">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource addser}"/>
             </components:LandingPageButton.Icon>

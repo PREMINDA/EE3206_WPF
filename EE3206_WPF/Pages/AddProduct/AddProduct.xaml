@@ -14,8 +14,34 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
-        <Border CornerRadius="24" Grid.Row="0" Height="600" Width="1180" Background="#393352"></Border>
-        
+        <Border CornerRadius="24" Grid.Row="0" Height="600" Width="1180" Background="#393352">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="111*"/>
+                    <ColumnDefinition Width="560"/>
+                    <ColumnDefinition Width="199*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Text="ADD PRODUCT INFORMATION" FontSize="34" FontFamily="Akrobat SemiBold"/>
+                <Label Content="PRODUCT NAME" Grid.Row="1" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" Height="42" Width="190" FontFamily="Akrobat"></Label>
+                <Label Content="PRODUCT PRICE" Grid.Row="2" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" Height="42" Width="190" FontFamily="Akrobat"></Label>
+                <Label Content="DESCRIPTION" Margin="0,24,0,0" Grid.Row="3" Foreground="White" FontSize="28" VerticalAlignment="Top" HorizontalAlignment="Center" Height="42" Width="190" FontFamily="Akrobat"></Label>
+                <components1:CustomeTextInput Grid.Row="1" x:Name="ProdName" Grid.Column="1" TextVal="" Margin="12,10,45,10"/>
+                <components1:CustomeTextInput Grid.Column="1" Grid.Row="2" TextVal="" Margin="12,10,45,10"/>
+                <components1:CustomeTextInput VerticalLoc="Top"  Grid.Column="1" Grid.Row="3" TextVal="" Margin="12,10,45,10"/>
+                <components1:AddButton AddBtnClick="AddImage" tagName="Add Image" Grid.Column="2" Grid.Row="1"/>
+                <Border Margin="12" CornerRadius="18" Background="WhiteSmoke" Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" >
+                    <Image x:Name="image1" ></Image>
+                </Border>
+            </Grid>
+        </Border>
+
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
