@@ -26,7 +26,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <components:LandingPageButton NavClick="NavClick_User" NavUri="/Pages/testpage/Page1.xaml" Grid.Row="0" Grid.Column="0">
+        <components:LandingPageButton  Grid.Row="0" Grid.Column="0">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource User}"/>
             </components:LandingPageButton.Icon>
@@ -48,7 +48,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="0" Grid.Column="2">
+        <components:LandingPageButton NavClick="NavClick_User"  NavUri="/Pages/AdminReg/AdminReg.xaml" Grid.Row="0" Grid.Column="2">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource plus}"/>
             </components:LandingPageButton.Icon>
@@ -59,7 +59,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="0" Grid.Column="3" >
+        <components:LandingPageButton  NavClick="NavClick_User" NavUri="/Pages/AddProduct/AddProduct.xaml" Grid.Row="0" Grid.Column="3" >
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource addnew}"/>
             </components:LandingPageButton.Icon>
@@ -103,7 +103,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="1" Grid.Column="3">
+        <components:LandingPageButton  NavClick="NavClick_User" Grid.Row="1" Grid.Column="3">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource logout}"/>
             </components:LandingPageButton.Icon>
@@ -116,81 +116,3 @@
 
     </Grid>
 </Page>
-
-<!--{Binding ElementName=bt8,Path=Foreground}-->
-
-<!--<Grid Background="#2e2d42" Grid.Column="1"></Grid>-->
-<!--<Grid Grid.Column="2" Margin="10,0,10,0">
-    <Grid.RowDefinitions>
-        <RowDefinition Height="20"/>
-        <RowDefinition Height="100"/>
-        <RowDefinition Height="100"/>
-        <RowDefinition Height="100"/>
-        <RowDefinition Height="100"/>
-        <RowDefinition Height="100"/>
-        <RowDefinition Height="100"/>
-
-
-        <RowDefinition/>
-    </Grid.RowDefinitions>
-    <components:LandingPageButton Grid.Row="1">
-        <components:LandingPageButton.Icon>
-            <Path Fill="White" Height="40" Width="40" Data="{StaticResource logout}"/>
-        </components:LandingPageButton.Icon>
-        <components:LandingPageButton.IconTitle>
-            <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
-                        Logout
-            </TextBlock>
-        </components:LandingPageButton.IconTitle>
-    </components:LandingPageButton>
-    <components:SmallButton Grid.Row="2" >
-        <components:SmallButton.Icon>
-            <Path Fill="White" Height="40" Width="40" Data="{StaticResource User}"/>
-        </components:SmallButton.Icon>
-        <components:SmallButton.IconTitle>
-            <TextBlock  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
-                        Customers
-            </TextBlock>
-        </components:SmallButton.IconTitle>
-    </components:SmallButton>
-    <components:SmallButton Grid.Row="3" >
-        <components:SmallButton.Icon>
-            <Path Fill="White" Height="40" Width="40" Data="{StaticResource Admin}"/>
-        </components:SmallButton.Icon>
-        <components:SmallButton.IconTitle>
-            <TextBlock  Foreground="White" TextAlignment="Center" Width="60" Margin="0,5,0,0" HorizontalAlignment="Center" Grid.Row="8">
-               Admin
-            </TextBlock>
-        </components:SmallButton.IconTitle>
-    </components:SmallButton>
-    <components:SmallButton Grid.Row="4">
-        <components:SmallButton.Icon>
-            <Path Fill="White" Height="40" Width="40" Data="{StaticResource plus}"/>
-        </components:SmallButton.Icon>
-        <components:SmallButton.IconTitle>
-            <TextBlock  Foreground="White" TextAlignment="Center" Width="60" Margin="0,5,0,0" HorizontalAlignment="Center" Grid.Row="8">
-               Add new<LineBreak/>Admin
-            </TextBlock>
-        </components:SmallButton.IconTitle>
-    </components:SmallButton>
-    <components:SmallButton Grid.Row="5">
-        <components:SmallButton.Icon>
-            <Path Fill="White" Height="40" Width="40" Data="{StaticResource addnew}"/>
-        </components:SmallButton.Icon>
-        <components:SmallButton.IconTitle>
-            <TextBlock  Foreground="White" TextAlignment="Center" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="10">
-               Add new<LineBreak/>Item
-            </TextBlock>
-        </components:SmallButton.IconTitle>
-    </components:SmallButton>
-    <components:SmallButton Grid.Row="6">
-        <components:SmallButton.Icon>
-            <Path Fill="White" Height="40" Width="40" Data="{StaticResource addser}"/>
-        </components:SmallButton.Icon>
-        <components:SmallButton.IconTitle>
-            <TextBlock  Foreground="White" TextAlignment="Center" Width="60" Margin="0,5,0,0" HorizontalAlignment="Center" Grid.Row="12">
-               Add new<LineBreak/>Servis
-            </TextBlock>
-        </components:SmallButton.IconTitle>
-    </components:SmallButton>
-</Grid>-->

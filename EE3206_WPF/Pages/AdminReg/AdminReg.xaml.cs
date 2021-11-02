@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EE3206_WPF
+namespace EE3206_WPF.Pages.AdminReg
 {
-    
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Interaction logic for AdminReg.xaml
+    /// </summary>
+    public partial class AdminReg : Page
     {
-       
-        
-        public MainWindow()
+        public AdminReg()
         {
             InitializeComponent();
-
         }
     }
 }

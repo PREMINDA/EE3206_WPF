@@ -8,10 +8,25 @@
         Title="MainWindow" Height="840" Width="1280">
     <Grid Background="#262537">
         <Grid.RowDefinitions>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="70"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Frame x:Name="_FrameName" NavigationUIVisibility="Hidden" Grid.Row="1" Source="/Pages/AdminDashBoard/AdminDashBoard.xaml">
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="1" Background="AliceBlue" Width="70" Height="70" CornerRadius="100">
+                <Ellipse Height="60" Width="60">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="Imagebr" ></ImageBrush>
+                    </Ellipse.Fill>
+                </Ellipse>
+            </Border>
+        </Grid>
+        <Frame x:Name="_FrameName" NavigationUIVisibility="Hidden" Grid.Row="2" Source="/Pages/AdminDashBoard/AdminDashBoard.xaml">
             
         </Frame>
 

@@ -35,6 +35,7 @@ namespace EE3206_WPF.Pages.AdminDashBoard
         {
             var ClickButton = e.OriginalSource as LandingPageButton;
             NavigationService.Navigate(ClickButton.NavUri);
+
         }
     }
 }

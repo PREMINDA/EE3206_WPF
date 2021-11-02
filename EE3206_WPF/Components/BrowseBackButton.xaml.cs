@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EE3206_WPF
+namespace EE3206_WPF.Components
 {
-    
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Interaction logic for BrowseBackButton.xaml
+    /// </summary>
+    public partial class BrowseBackButton : UserControl
     {
-       
-        
-        public MainWindow()
+        public BrowseBackButton()
         {
             InitializeComponent();
-
         }
     }
 }

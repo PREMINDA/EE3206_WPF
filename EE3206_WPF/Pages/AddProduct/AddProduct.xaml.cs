@@ -13,17 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EE3206_WPF
+namespace EE3206_WPF.Pages.AddProduct
 {
-    
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Interaction logic for AddProduct.xaml
+    /// </summary>
+    public partial class AddProduct : Page
     {
-       
-        
-        public MainWindow()
+        public AddProduct()
         {
-            InitializeComponent();
+            InitializeComponent(); 
+        }
 
+        private void AddBtnClick1(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Hello MessageBox", "Confirmation");
         }
     }
 }
