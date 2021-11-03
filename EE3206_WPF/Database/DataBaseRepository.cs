@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EE3206_WPF.Database
 {
-    class AdminContext : DbContext
+    class DataBaseRepository:DbContext
     {
         public DbSet<Admin> Admins { get; set; }
     }

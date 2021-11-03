@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="AdminList"
-      x:Name="AdminList">
+      x:Name="AdminList_view">
     <Grid  Background="#262537">
         
     </Grid>

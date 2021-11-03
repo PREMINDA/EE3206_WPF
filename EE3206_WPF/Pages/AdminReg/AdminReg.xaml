@@ -16,10 +16,11 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <components1:BrowseBackButton Margin="0,0,170,620"></components1:BrowseBackButton>
-        <Border Grid.Column="1" Height="600" CornerRadius="24" Background="#393352">
+        <Border Grid.Column="1" Height="650" CornerRadius="24" Background="#393352">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="60"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -34,23 +35,32 @@
                 </components1:TextInput>
                 <components1:TextInput x:Name="Email" Grid.Row="2" Height="80" Width="550">
                     <components1:TextInput.Icon>
-                        <Path  Data="{StaticResource User}" Width="28"/>
+                        <Path  Data="{StaticResource Email}" Width="28"/>
                     </components1:TextInput.Icon>
                 </components1:TextInput>
-                <components1:TextInput Grid.Row="3" Height="80" Width="550">
+                <components1:TextInput x:Name="TelephoneNum" Grid.Row="3" Height="80" Width="550">
                     <components1:TextInput.Icon>
-                        <Path  Data="{StaticResource User}" Width="28"/>
+                        <Path  Data="{StaticResource Mobile}" Width="28"/>
                     </components1:TextInput.Icon>
                 </components1:TextInput>
-                <components1:TextInput Grid.Row="4" Height="80" Width="550">
+                <components1:TextInput x:Name="Password" Grid.Row="4" Height="80" Width="550">
                     <components1:TextInput.Icon>
-                        <Path  Data="{StaticResource User}" Width="28"/>
+                        <Path  Data="{StaticResource pass}" Width="28"/>
                     </components1:TextInput.Icon>
                 </components1:TextInput>
-                <components1:RoundButton Submitclick="RoundButton_Submitclick"  Grid.Row="5" ButtonTilte="Login" Margin="0,0,0,14" />
+                <components1:TextInput x:Name="RePassword" Grid.Row="5" Height="80" Width="550">
+                    <components1:TextInput.Icon>
+                        <Path  Data="{StaticResource rEenter}" Width="28"/>
+                    </components1:TextInput.Icon>
+                </components1:TextInput>
+                <components1:RoundButton Submitclick="RoundButton_Submitclick"  Grid.Row="6" ButtonTilte="Register" Margin="0,0,0,14" />
             </Grid>
             
+           
         </Border>
+        <components1:PopUpWindow   Width="450" Height="200"  VerticalAlignment="Center" x:Name="popwindow" Grid.Column="1" >
+
+        </components1:PopUpWindow>
 
 
     </Grid>
