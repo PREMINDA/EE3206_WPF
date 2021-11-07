@@ -17,7 +17,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="RoundButton" TargetType="{x:Type Button}">
+        <Style x:Key="CloseEnvBtn" TargetType="{x:Type Button}">
             
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
@@ -74,8 +74,8 @@
                     
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Text="{Binding TextVal,ElementName=popWindow}"></TextBlock>
-                <Button Click="Button_Click" Foreground="White" Style="{DynamicResource RoundButton}" Grid.Row="1" Width="200" Height="50">Close</Button>
+                       Text="{Binding TextVal,ElementName=popWindow}" FontFamily="Akrobat SemiBold"></TextBlock>
+                <Button Click="Button_Click" Foreground="White" Style="{DynamicResource CloseEnvBtn}" Grid.Row="1" Width="200" Height="50">Close</Button>
             </Grid>
         </Border>
     </Popup>

@@ -58,7 +58,7 @@
             
            
         </Border>
-        <components1:PopUpWindow   Width="450" Height="200"  VerticalAlignment="Center" x:Name="popwindow" Grid.Column="1" >
+        <components1:PopUpWindow CloseEnv="popwindow_CloseEnv"  Width="450" Height="200"  VerticalAlignment="Center" x:Name="popwindow" Grid.Column="1" >
 
         </components1:PopUpWindow>
 

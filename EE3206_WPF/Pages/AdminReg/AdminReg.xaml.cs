@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -22,6 +23,7 @@ namespace EE3206_WPF.Pages.AdminReg
     /// </summary>
     public partial class AdminReg : Page
     {
+        Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
         public AdminReg()
         {
             InitializeComponent();
@@ -29,44 +31,58 @@ namespace EE3206_WPF.Pages.AdminReg
 
         private void RoundButton_Submitclick(object sender, RoutedEventArgs e)
         {
-            //using (DataBaseRepository repository = new DataBaseRepository())
-            //{
+            using (DataBaseRepository repository = new DataBaseRepository())
+            {
+               
 
-            //    Admin admin = new Admin()
-            //    {
-            //        Name = UserName.EnteredValue,
-            //        Email = Email.EnteredValue,
-            //        TelNum=TelephoneNum.EnteredValue,
-            //        Password=Password.EnteredValue
+                Admin admin = new Admin()
+                {
+                    Name = UserName.EnteredValue,
+                    Email = Email.EnteredValue,
+                    TelNum = TelephoneNum.EnteredValue,
+                    Password = Password.EnteredValue
 
-            //    };
+                };
 
-            //    if (Password.EnteredValue != RePassword.EnteredValue)
-            //    {
+                if (String.IsNullOrEmpty(UserName.EnteredValue) || String.IsNullOrEmpty(Email.EnteredValue) || String.IsNullOrEmpty(TelephoneNum.EnteredValue) || String.IsNullOrEmpty(Password.EnteredValue))
+                {
+                    popwindow.TextVal = "Every thing should be fill";
+                    popwindow.isOpen = true;
+                }
+                else if (!regex.IsMatch(Email.EnteredValue)) 
+                {
+                    popwindow.TextVal = "Email is not valid";
+                    popwindow.isOpen = true;
+                }
+                else if (Password.EnteredValue != RePassword.EnteredValue)
+                {
+                    popwindow.TextVal = "Password Not Matched";
+                    popwindow.isOpen = true;
+                }
+                else
+                {
+
+                    repository.Admins.Add(admin);
+                    repository.SaveChanges();
 
 
-            //    }
-            //    else 
-            //    {
+                    if (this.NavigationService.CanGoBack)
+                    {
 
-            //        repository.Admins.Add(admin);
-            //        repository.SaveChanges();
-            //    }
+                        this.NavigationService.GoBack();
 
-            //}
+                    }
 
-            popwindow.TextVal = "False Value";
-            popwindow.isOpen = !popwindow.isOpen;
+                }
+
+            }
+
+
         }
 
-        private void popwindow_closePop(object sender, RoutedEventArgs e)
+        private void popwindow_CloseEnv(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void popwindow_Submitclick(object sender, RoutedEventArgs e)
-        {
-
+            popwindow.isOpen = false;
         }
     }
 }

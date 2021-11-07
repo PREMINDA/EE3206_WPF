@@ -36,17 +36,15 @@ namespace EE3206_WPF.Components
         }
 
         public static readonly RoutedEvent popUpClose =
-            EventManager.RegisterRoutedEvent(nameof(Submitclick), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(LandingPageButton));
+            EventManager.RegisterRoutedEvent(nameof(CloseEnv), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(LandingPageButton));
 
-        public event RoutedEventHandler Submitclick
+        public event RoutedEventHandler CloseEnv
         {
             add { AddHandler(popUpClose, value); }
             remove { RemoveHandler(popUpClose, value); }
         }
 
         // Using a DependencyProperty as the backing store for ButtonTilte.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ButtonTilteProperty =
-            DependencyProperty.Register("ButtonTilte", typeof(string), typeof(RoundButton), new PropertyMetadata("asdasd"));
 
         // Using a DependencyProperty as the backing store for isOpen.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty isOpenProperty =
