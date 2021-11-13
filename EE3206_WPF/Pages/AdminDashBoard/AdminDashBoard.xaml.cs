@@ -24,6 +24,7 @@ namespace EE3206_WPF.Pages.AdminDashBoard
         public AdminDashBoard()
         {
             InitializeComponent();
+            
         }
 
         public static implicit operator Frame(AdminDashBoard v)
@@ -35,6 +36,10 @@ namespace EE3206_WPF.Pages.AdminDashBoard
         {
             var ClickButton = e.OriginalSource as LandingPageButton;
             NavigationService.Navigate(ClickButton.NavUri);
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.RemoveBackEntry();
+            }
 
         }
     }

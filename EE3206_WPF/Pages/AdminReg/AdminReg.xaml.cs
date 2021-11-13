@@ -64,6 +64,7 @@ namespace EE3206_WPF.Pages.AdminReg
 
                     repository.Admins.Add(admin);
                     repository.SaveChanges();
+                    
 
 
                     if (this.NavigationService.CanGoBack)

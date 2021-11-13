@@ -24,6 +24,8 @@ namespace EE3206_WPF
         {
             InitializeComponent();
 
+           
+
         }
     }
 }

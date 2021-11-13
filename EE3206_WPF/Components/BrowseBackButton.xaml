@@ -62,7 +62,7 @@
         </Style>
     </UserControl.Resources>
     <Grid>
-        <Button Background="#804bf5" Style="{DynamicResource BrowsBack}" Command="NavigationCommands.BrowseBack"  Width="140" Height="60"  FontSize="24" >
+        <Button Click="Button_Click" Background="#804bf5" Style="{DynamicResource BrowsBack}" Command="NavigationCommands.BrowseBack"  Width="140" Height="60"  FontSize="24" >
             <TextBlock Foreground="white" FontFamily="Akrobat SemiBold">Back</TextBlock>
         </Button>
     </Grid>

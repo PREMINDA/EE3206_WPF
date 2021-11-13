@@ -24,5 +24,19 @@ namespace EE3206_WPF.Components
         {
             InitializeComponent();
         }
+
+        public static readonly RoutedEvent ClickEvent =
+           EventManager.RegisterRoutedEvent(nameof(BackButton), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(BrowseBackButton));
+
+        public event RoutedEventHandler BackButton
+        {
+            add { AddHandler(ClickEvent, value); }
+            remove { RemoveHandler(ClickEvent, value); }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(ClickEvent));
+        }
     }
 }

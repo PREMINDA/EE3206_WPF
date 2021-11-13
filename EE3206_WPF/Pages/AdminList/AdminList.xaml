@@ -7,8 +7,55 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="AdminList"
-      x:Name="AdminList_view">
+      x:Name="AdminList_view"
+      xmlns:components1="clr-namespace:EE3206_WPF.Components">
     <Grid  Background="#262537">
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="280"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <components1:BrowseBackButton BackButton="BrowseBackButton_BackButton" Margin="-42,-313,42,313"></components1:BrowseBackButton>
+        <ListBox BorderThickness="1,0,0,0" Grid.Column="1" Name="listdata" Background="Transparent">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <components1:UsersDetail Width="800" Username="{Binding Name}" Email="{Binding Email}" TelephoneNum="{Binding TelNum}" IdValue="{Binding ID}" />
+                    <!--<Border Margin="0,6,0,6" Width="800" Height="150" Background="#393352" CornerRadius="18">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="138*"></ColumnDefinition>
+                                <ColumnDefinition Width="527*"></ColumnDefinition>
+                                <ColumnDefinition Width="135*"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <StackPanel>
+                                    <TextBlock Foreground="#9304D1" Text="ID" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                                    <TextBlock Foreground="White" Text="{Binding ID}" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                                </StackPanel>
+                                <StackPanel Grid.Row="1" Grid.Column="0">
+                                    <TextBlock Foreground="#9304D1" Text="EMAIL" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                                    <TextBlock Foreground="White" Text="{Binding Email}" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                                </StackPanel>
+                                <StackPanel  Grid.Row="0" Grid.Column="1">
+                                    <TextBlock Foreground="#9304D1" Text="NAME" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                                    <TextBlock Foreground="White" Text="{Binding Name}" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                                </StackPanel>
+                                <StackPanel  Grid.Row="1" Grid.Column="1">
+                                    <TextBlock Foreground="#9304D1" Text="TELEPHON NUMBER" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                                    <TextBlock Foreground="White" Text="{Binding TelNum}" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                                </StackPanel>
+                            </Grid>
+                        </Grid>
+                    </Border>-->
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Page>

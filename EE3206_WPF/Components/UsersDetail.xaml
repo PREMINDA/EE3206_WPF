@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="EE3206_WPF.Components.UsersDetail"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:EE3206_WPF.Components"
+             mc:Ignorable="d" 
+             x:Name="UserDetail"
+             d:DesignHeight="150" d:DesignWidth="800">
+    <Border Margin="0,6,0,6" Width="800" Background="#393352" CornerRadius="18">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="138*"></ColumnDefinition>
+                <ColumnDefinition Width="527*"></ColumnDefinition>
+                <ColumnDefinition Width="135*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel>
+                    <TextBlock Foreground="#A500FE" Text="ID" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                    <TextBlock Foreground="White" Text="{Binding IdValue,ElementName=UserDetail}" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <TextBlock Foreground="#A500FE" Text="EMAIL" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                    <TextBlock Foreground="White" Text="{Binding Email,ElementName=UserDetail}" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                </StackPanel>
+                <StackPanel  Grid.Row="0" Grid.Column="1">
+                    <TextBlock Foreground="#A500FE" Text="NAME" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                    <TextBlock Foreground="White" Text="{Binding Username,ElementName=UserDetail}" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                </StackPanel>
+                <StackPanel  Grid.Row="1" Grid.Column="1">
+                    <TextBlock Foreground="#A500FE" Text="TELEPHON NUMBER" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                    <TextBlock Foreground="White" Text="{Binding TelephoneNum,ElementName=UserDetail}" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
