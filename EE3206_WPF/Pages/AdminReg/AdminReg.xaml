@@ -15,7 +15,7 @@
             <ColumnDefinition Width="600"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <components1:BrowseBackButton Margin="0,0,170,620"></components1:BrowseBackButton>
+        <components1:BrowseBackButton Margin="0,30,170,590"></components1:BrowseBackButton>
         <Border Grid.Column="1" Height="650" CornerRadius="24" Background="#393352">
             <Grid>
                 <Grid.RowDefinitions>

@@ -1,4 +1,5 @@
 ﻿using EE3206_WPF.Components;
+using EE3206_WPF.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,6 @@ namespace EE3206_WPF.Pages.AdminDashBoard
         public AdminDashBoard()
         {
             InitializeComponent();
-            
         }
 
         public static implicit operator Frame(AdminDashBoard v)

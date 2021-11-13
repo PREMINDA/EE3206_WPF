@@ -71,12 +71,25 @@ namespace EE3206_WPF.Components
         public static readonly DependencyProperty TelephoneNumProperty =
             DependencyProperty.Register("TelephoneNum", typeof(string), typeof(UsersDetail), new PropertyMetadata("NA"));
 
+        public static readonly RoutedEvent ClickEvent =
+           EventManager.RegisterRoutedEvent(nameof(DeleteButton), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(UsersDetail));
 
+        public event RoutedEventHandler DeleteButton
+        {
+            add { AddHandler(ClickEvent, value); }
+            remove { RemoveHandler(ClickEvent, value); }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(ClickEvent));
+        }
 
 
         public UsersDetail()
         {
             InitializeComponent();
         }
+
     }
 }
