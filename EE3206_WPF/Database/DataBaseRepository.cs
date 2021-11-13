@@ -11,5 +11,6 @@ namespace EE3206_WPF.Database
     class DataBaseRepository:DbContext
     {
         public DbSet<Admin> Admins { get; set; }
+        public DbSet<Product> Products { get; set; }
     }
 }

@@ -33,8 +33,8 @@ namespace EE3206_WPF.Pages.AddProduct
 
         private void AddBtnClick1(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(System.IO.Directory.GetCurrentDirectory());
-            File.Copy(filePate, System.IO.Path.Combine(@"E:\asd", System.IO.Path.GetFileName(filePate)));
+            MessageBox.Show(filePate);
+            File.Copy(filePate, System.IO.Path.Combine(@"E:\asd", ProdName.TextVal.ToString()+".jpg"));
             
         }
 
