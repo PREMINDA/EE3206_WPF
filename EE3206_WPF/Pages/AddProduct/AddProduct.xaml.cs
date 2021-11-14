@@ -1,10 +1,13 @@
 ﻿
+using EE3206_WPF.Database;
+using EE3206_WPF.Models;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,8 +36,44 @@ namespace EE3206_WPF.Pages.AddProduct
 
         private void AddBtnClick1(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(filePate);
-            File.Copy(filePate, System.IO.Path.Combine(@"E:\asd", ProdName.TextVal.ToString()+".jpg"));
+           
+            
+            using (DataBaseRepository repository = new DataBaseRepository()) 
+            {
+                
+                if (String.IsNullOrEmpty(ProdName.TextVal) || String.IsNullOrEmpty(Price.TextVal) || String.IsNullOrEmpty(Description.TextVal))
+                {
+                    popwindow.TextVal = "Everything Should be fill";
+                    popwindow.isOpen = true;
+                }
+                else
+                {
+                    Product product = new Product()
+                    {
+                        productName = ProdName.TextVal,
+                        price = int.Parse(Price.TextVal),
+                        description = Description.TextVal
+                    };
+
+                    if (filePate == null)
+                    {
+                        popwindow.TextVal = "Select Image For Product";
+                        popwindow.isOpen = true;
+                    }
+                    else 
+                    {
+                        File.Copy(filePate, System.IO.Path.Combine(@"E:\asd", ProdName.TextVal.ToString() + ".jpg"));
+                        repository.Products.Add(product);
+                        repository.SaveChanges();
+
+                        if (this.NavigationService.CanGoBack)
+                        {
+                            this.NavigationService.GoBack();
+                        }
+                    }
+                    
+                }
+            }
             
         }
 
@@ -52,20 +91,33 @@ namespace EE3206_WPF.Pages.AddProduct
 
                     filePate = openFileDialog.FileName;
                     image1.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-                     
 
                 }
 
                 openFileDialog = null;
                 GC.Collect();
 
-
-
             } 
-            catch 
+            catch (IOException)
             {
                 
             }
+        }
+
+        private void popwindow_CloseEnv(object sender, RoutedEventArgs e)
+        {
+            popwindow.isOpen = false;
+        }
+
+        private void Price_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            if (regex.IsMatch(e.Text) == true)
+            {
+                popwindow.TextVal = "Only allow numbers";
+                popwindow.isOpen = true;
+            }
+            e.Handled = regex.IsMatch(e.Text);
         }
     }
 }

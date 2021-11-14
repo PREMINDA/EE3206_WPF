@@ -24,6 +24,7 @@ namespace EE3206_WPF.Pages.AdminReg
     public partial class AdminReg : Page
     {
         Regex regex = new Regex(@"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$");
+
         public AdminReg()
         {
             InitializeComponent();
@@ -64,8 +65,6 @@ namespace EE3206_WPF.Pages.AdminReg
 
                     repository.Admins.Add(admin);
                     repository.SaveChanges();
-                    
-
 
                     if (this.NavigationService.CanGoBack)
                     {
@@ -77,7 +76,6 @@ namespace EE3206_WPF.Pages.AdminReg
                 }
 
             }
-
 
         }
 
