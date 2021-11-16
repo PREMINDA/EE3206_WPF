@@ -62,15 +62,23 @@ namespace EE3206_WPF.Pages.AdminReg
                 }
                 else
                 {
-
-                    repository.Admins.Add(admin);
-                    repository.SaveChanges();
-
-                    if (this.NavigationService.CanGoBack)
+                    Admin exsitsAdmin=repository.Admins.Where(m => m.Email == admin.Email).Select(m=>m).SingleOrDefault();
+                    if (exsitsAdmin != null)
                     {
+                        popwindow.TextVal = "Enterde Email Already Exists";
+                        popwindow.isOpen = true;
+                    }
+                    else
+                    {
+                        repository.Admins.Add(admin);
+                        repository.SaveChanges();
 
-                        this.NavigationService.GoBack();
+                        if (this.NavigationService.CanGoBack)
+                        {
 
+                            this.NavigationService.GoBack();
+
+                        }
                     }
 
                 }
