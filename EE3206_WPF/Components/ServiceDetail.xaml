@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:EE3206_WPF.Components"
              mc:Ignorable="d" 
              x:Name="shopdetail"
-             d:DesignHeight="150" d:DesignWidth="800">
+             d:DesignHeight="150" d:DesignWidth="600">
     <UserControl.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -64,14 +64,19 @@
             </Setter>
         </Style>
     </UserControl.Resources>
-    <Border Margin="0,6,0,6" Width="800" Background="#393352" CornerRadius="18">
+    <Border Margin="0,6,0,6" Width="600" Background="#393352" CornerRadius="18">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="138*"></ColumnDefinition>
-                <ColumnDefinition Width="527*"></ColumnDefinition>
-                <ColumnDefinition Width="135*"></ColumnDefinition>
+                <ColumnDefinition Width="89*"></ColumnDefinition>
+                <ColumnDefinition Width="173*"></ColumnDefinition>
+                <ColumnDefinition Width="195*"></ColumnDefinition>
+                <ColumnDefinition Width="143*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="1">
+            <StackPanel VerticalAlignment="Center" Height="60">
+                <TextBlock HorizontalAlignment="Center" Foreground="#A500FE" Text="ID" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                <TextBlock HorizontalAlignment="Center" Foreground="White" Text="{Binding ID,ElementName=shopdetail}" FontFamily="Akrobat SemiBold" FontSize="24"/>
+            </StackPanel>
+            <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
@@ -80,12 +85,15 @@
                     <TextBlock Foreground="#A500FE" Text="{Binding Title,ElementName=shopdetail}" FontFamily="Akrobat SemiBold" FontSize="24"/>
                     <TextBlock Foreground="White" Text="{Binding SubTitle,ElementName=shopdetail}" FontFamily="Akrobat SemiBold" FontSize="24"/>
                 </StackPanel>
-                <StackPanel  Grid.Row="1" Grid.Column="1">
+                <StackPanel  Grid.Row="1" Grid.Column="2">
                     <TextBlock Foreground="#A500FE" Text="Price" FontFamily="Akrobat SemiBold" FontSize="24"/>
-                    <TextBlock Foreground="White" Text="{Binding Price,ElementName=shopdetail}" FontFamily="Akrobat SemiBold" FontSize="24"/>
+                    <TextBlock  Foreground="White" FontFamily="Akrobat SemiBold" FontSize="24">
+                        <TextBlock Text="{Binding Price,ElementName=shopdetail}"/>
+                        <TextBlock>.00$</TextBlock>
+                    </TextBlock>
                 </StackPanel>
             </Grid>
-            <Button Click="Button_Click" Style="{DynamicResource DeleteButton}" Grid.Column="2" Margin="10,10,10,10">
+            <Button Click="Button_Click" Style="{DynamicResource DeleteButton}" Grid.Column="3" Margin="10,10,10,10">
                 <Path Fill="White" Height="60" Width="60" Data="{StaticResource bin}"/>
             </Button>
         </Grid>

@@ -56,6 +56,20 @@ namespace EE3206_WPF.Components
         public static readonly DependencyProperty PriceProperty =
             DependencyProperty.Register("Price", typeof(string), typeof(ServiceDetail), new PropertyMetadata("xx"));
 
+
+
+        public int ID
+        {
+            get { return (int)GetValue(IDProperty); }
+            set { SetValue(IDProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for ID.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IDProperty =
+            DependencyProperty.Register("ID", typeof(int), typeof(ServiceDetail), new PropertyMetadata(0));
+
+
+
         public static readonly RoutedEvent ClickEvent =
            EventManager.RegisterRoutedEvent(nameof(DeleteListItem), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(UsersDetail));
 

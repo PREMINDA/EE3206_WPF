@@ -21,7 +21,7 @@ namespace EE3206_WPF.Pages.AdminList
     
     public partial class AdminList : Page
     {
-        private UsersDetail asd;
+        private UsersDetail usersDetail;
         private int id;
         DataBaseRepository repository = new DataBaseRepository();
 
@@ -48,9 +48,9 @@ namespace EE3206_WPF.Pages.AdminList
 
         private void UsersDetail_DeleteButton(object sender, RoutedEventArgs e)
         {
-            asd = (UsersDetail)sender;
-            id = asd.IdValue;
-            popwindow.TextVal = String.Format("{0} is deleted", asd.Username);
+            usersDetail = (UsersDetail)sender;
+            id = usersDetail.IdValue;
+            popwindow.TextVal = String.Format("{0} is deleted", usersDetail.Username);
             popwindow.isOpen = true;
             //MessageBox.Show(id.ToString());
             deleteItem(id);

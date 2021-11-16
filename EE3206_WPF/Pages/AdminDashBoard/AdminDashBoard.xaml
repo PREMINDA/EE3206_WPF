@@ -92,7 +92,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton NavClick="NavClick_User"  NavUri="/Page/testpage/Page1.xaml" Grid.Row="1" Grid.Column="2">
+        <components:LandingPageButton NavClick="NavClick_User"  NavUri="/Pages/Management/Managment.xaml" Grid.Row="1" Grid.Column="2">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource services}"/>
             </components:LandingPageButton.Icon>
