@@ -18,7 +18,7 @@ using System.Windows.Shapes;
 
 namespace EE3206_WPF.Pages.Management
 {
-    enum matype
+    enum MaType
     {
         product,service
     }
@@ -35,27 +35,6 @@ namespace EE3206_WPF.Pages.Management
             loadData();
         }
 
-        private void Product_DeleteButton(object sender, RoutedEventArgs e)
-        {
-            serviseDetail = (ServiceDetail)sender;
-            int id = serviseDetail.ID;
-            popwindow.TextVal = String.Format("{0} is deleted", serviseDetail.SubTitle);
-            popwindow.isOpen = true;
-            //MessageBox.Show(id.ToString());
-            deleteItem(id, matype.product);
-
-        }
-
-        private void Service_DeleteButton(object sender, RoutedEventArgs e)
-        {
-            serviseDetail = (ServiceDetail)sender;
-            int id = serviseDetail.ID;
-            popwindow.TextVal = String.Format("{0} is deleted", serviseDetail.SubTitle);
-            popwindow.isOpen = true;
-            //MessageBox.Show(id.ToString());
-            deleteItem(id, matype.service);
-        }
-
         private void loadData()
         {
 
@@ -64,13 +43,35 @@ namespace EE3206_WPF.Pages.Management
 
         }
 
-        private void deleteItem(int id,matype type)
+
+        private void Product_DeleteButton(object sender, RoutedEventArgs e)
         {
-            if (type == matype.product)
+            deletePros(sender, MaType.product);
+
+        }
+
+        private void Service_DeleteButton(object sender, RoutedEventArgs e)
+        {
+            deletePros(sender, MaType.service);
+        }
+
+        private void deletePros(object sender, MaType matype)
+        {
+            serviseDetail = (ServiceDetail)sender;
+            int id = serviseDetail.ID;
+            popwindow.TextVal = String.Format("{0} is deleted", serviseDetail.SubTitle);
+            popwindow.isOpen = true;
+            //MessageBox.Show(id.ToString());
+            deleteItem(id, matype);
+        }
+
+        private void deleteItem(int id,MaType type)
+        {
+            if (type == MaType.product)
             {
                 repository.Products.Remove(repository.Products.Find(id));
             }
-            else if (type == matype.service) 
+            else if (type == MaType.service) 
             {
                 repository.Services.Remove(repository.Services.Find(id));
             } 
@@ -82,5 +83,6 @@ namespace EE3206_WPF.Pages.Management
         {
             popwindow.isOpen = false;
         }
+        
     }
 }

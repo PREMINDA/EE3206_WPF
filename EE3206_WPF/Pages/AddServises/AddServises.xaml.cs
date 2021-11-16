@@ -58,7 +58,7 @@ namespace EE3206_WPF.Pages.AddServises
                     }
                     else
                     {
-                        File.Copy(filePate, System.IO.Path.Combine(@"E:\asd", ServiceName.TextVal.ToString() + ".jpg"));
+                        File.Copy(filePate, System.IO.Path.Combine(@"E:\asd\service", ServiceName.TextVal.ToString() + ".jpg"));
                         repository.Services.Add(service);
                         repository.SaveChanges();
 
@@ -86,15 +86,10 @@ namespace EE3206_WPF.Pages.AddServises
 
                     filePate = openFileDialog.FileName;
                     image1.Source = new BitmapImage(new Uri(openFileDialog.FileName));
-
-
                 }
 
                 openFileDialog = null;
                 GC.Collect();
-
-
-
             }
             catch
             {
@@ -102,9 +97,7 @@ namespace EE3206_WPF.Pages.AddServises
             }
         }
 
-     
-
-        private void CustomeTextInput_PreviewTextInput(object sender, TextCompositionEventArgs e)
+         private void CustomeTextInput_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             Regex regex = new Regex("[^0-9]+");
             if (regex.IsMatch(e.Text) == true)
