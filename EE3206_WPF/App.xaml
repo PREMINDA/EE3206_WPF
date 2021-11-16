@@ -25,10 +25,8 @@
                 <Setter Property="Width" Value="30"/>
                 <Setter Property="Stretch" Value="Uniform"/>
             </Style>
-            
-            
+            <Color x:Key="LightVialot">#804bf5</Color>
         </ResourceDictionary>
-        
 
     </Application.Resources>
 </Application>

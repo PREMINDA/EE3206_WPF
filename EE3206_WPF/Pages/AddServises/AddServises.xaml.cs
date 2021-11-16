@@ -1,9 +1,12 @@
-﻿using Microsoft.Win32;
+﻿using EE3206_WPF.Database;
+using EE3206_WPF.Models;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,12 +27,49 @@ namespace EE3206_WPF.Pages.AddServises
     {
         string filePate;
 
- 
+        public AddServises()
+        {
+            InitializeComponent();
+        }
+
         private void AddBtnClick1(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(System.IO.Directory.GetCurrentDirectory());
-            File.Copy(filePate, System.IO.Path.Combine(@"E:\asd", System.IO.Path.GetFileName(filePate)));
+            using (DataBaseRepository repository = new DataBaseRepository())
+            {
 
+                if (String.IsNullOrEmpty(ServiceName.TextVal) || String.IsNullOrEmpty(Price.TextVal) || String.IsNullOrEmpty(Description.TextVal))
+                {
+                    popwindow.TextVal = "Everything Should be fill";
+                    popwindow.isOpen = true;
+                }
+                else
+                {
+                    Service service = new Service()
+                    {
+                        serviceName = ServiceName.TextVal,
+                        price = int.Parse(Price.TextVal),
+                        description = Description.TextVal
+                    };
+
+                    if (filePate == null)
+                    {
+                        popwindow.TextVal = "Select Image For Product";
+                        popwindow.isOpen = true;
+                    }
+                    else
+                    {
+                        File.Copy(filePate, System.IO.Path.Combine(@"E:\asd", ServiceName.TextVal.ToString() + ".jpg"));
+                        repository.Services.Add(service);
+                        repository.SaveChanges();
+
+                        if (this.NavigationService.CanGoBack)
+                        {
+                            this.NavigationService.GoBack();
+                        }
+                    }
+
+                }
+            }
         }
 
         private void AddImage(object sender, RoutedEventArgs e)
@@ -62,9 +102,22 @@ namespace EE3206_WPF.Pages.AddServises
             }
         }
 
-        public AddServises()
+     
+
+        private void CustomeTextInput_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            InitializeComponent();
+            Regex regex = new Regex("[^0-9]+");
+            if (regex.IsMatch(e.Text) == true)
+            {
+                popwindow.TextVal = "Only allow numbers";
+                popwindow.isOpen = true;
+            }
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void popwindow_CloseEnv(object sender, RoutedEventArgs e)
+        {
+            popwindow.isOpen = false;
         }
     }
 }
