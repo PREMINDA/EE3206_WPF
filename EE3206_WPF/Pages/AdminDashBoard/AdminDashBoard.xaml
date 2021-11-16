@@ -92,13 +92,13 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton  NavUri="/Page/testpage/Page1.xaml" Grid.Row="1" Grid.Column="2">
+        <components:LandingPageButton NavClick="NavClick_User"  NavUri="/Page/testpage/Page1.xaml" Grid.Row="1" Grid.Column="2">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource services}"/>
             </components:LandingPageButton.Icon>
             <components:LandingPageButton.IconTitle>
                 <TextBlock FontSize="32" Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
-                        User Services 
+                        Managment 
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
