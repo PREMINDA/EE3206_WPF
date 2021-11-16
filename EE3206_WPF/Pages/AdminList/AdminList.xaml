@@ -237,8 +237,6 @@
             </Style.Triggers>
         </Style>
 
-
-
     </Page.Resources>
     <Grid  Background="#262537">
         <Grid.ColumnDefinitions>
@@ -260,22 +258,3 @@
     </Grid>
 </Page>
 
-
-<!--<Grid  Background="#262537">
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="400"/>
-        <ColumnDefinition/>
-    </Grid.ColumnDefinitions>
-    <components1:BrowseBackButton BackButton="BrowseBackButton_BackButton" Margin="-101,-287,101,287"></components1:BrowseBackButton>
-    <ListBox BorderThickness="1,0,0,0" Grid.Column="1" Name="listdata" Background="Transparent">
-        <ListBox.ItemTemplate>
-            <DataTemplate>
-                <components1:UsersDetail DeleteButton="UsersDetail_DeleteButton" Width="800" Username="{Binding Name}" Email="{Binding Email}" TelephoneNum="{Binding TelNum}" IdValue="{Binding ID}" />
-
-            </DataTemplate>
-        </ListBox.ItemTemplate>
-    </ListBox>
-    <components1:PopUpWindow CloseEnv="popwindow_CloseEnv"  Width="450" Height="200"  VerticalAlignment="Center" x:Name="popwindow" Grid.Column="1" >
-
-    </components1:PopUpWindow>
-</Grid>-->
