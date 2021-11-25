@@ -25,7 +25,7 @@ namespace EE3206_WPF.Pages.Management
 
     public partial class Managment : Page
     {
-        ServiceDetail serviseDetail;
+        
 
         DataBaseRepository repository = new DataBaseRepository();
 
@@ -33,6 +33,7 @@ namespace EE3206_WPF.Pages.Management
         {
             InitializeComponent();
             loadData();
+            
         }
 
         private void loadData()
@@ -40,6 +41,7 @@ namespace EE3206_WPF.Pages.Management
 
             productdata.ItemsSource = repository.Products.ToList();
             servicedata.ItemsSource = repository.Services.ToList();
+           
 
         }
 
@@ -55,9 +57,10 @@ namespace EE3206_WPF.Pages.Management
             deletePros(sender, MaType.service);
         }
 
+        //Item Deleting process
         private void deletePros(object sender, MaType matype)
         {
-            serviseDetail = (ServiceDetail)sender;
+            ServiceDetail serviseDetail = (ServiceDetail)sender;
             int id = serviseDetail.ID;
             popwindow.TextVal = String.Format("{0} is deleted", serviseDetail.SubTitle);
             popwindow.isOpen = true;
@@ -65,6 +68,7 @@ namespace EE3206_WPF.Pages.Management
             deleteItem(id, matype);
         }
 
+        //Deleting Specific Item
         private void deleteItem(int id,MaType type)
         {
             if (type == MaType.product)

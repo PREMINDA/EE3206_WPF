@@ -76,8 +76,8 @@
                     <ColumnDefinition  Width="251*"/>
                     <ColumnDefinition Width="29*"/>
                 </Grid.ColumnDefinitions>
-                <PasswordBox Margin="20 0 0 0"  FontSize="40" Style="{DynamicResource UserInputPassword}" />
-                <ContentControl Grid.Column="1" Content="{Binding Icon,ElementName=UserInput}"/>
+                <PasswordBox x:Name="_passwordBox" PasswordChanged="_passwordBox_PasswordChanged"  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="20 0 0 0"  FontSize="28" Style="{DynamicResource UserInputPassword}" />
+                <ContentControl  Grid.Column="1" Content="{Binding Icon,ElementName=UserInput}"/>
                 <!--<Path Grid.Column="1"  Data="{StaticResource pass}" Width="35"/>-->
             </Grid>
         </Border>

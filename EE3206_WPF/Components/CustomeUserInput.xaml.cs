@@ -20,6 +20,21 @@ namespace EE3206_WPF.Components
     /// </summary>
     public partial class CustomeUserInput : UserControl
     {
+
+
+
+        public string Password
+        {
+            get { return (string)GetValue(PasswordProperty); }
+            set { SetValue(PasswordProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Password.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PasswordProperty =
+            DependencyProperty.Register("Password", typeof(string), typeof(CustomeUserInput), new PropertyMetadata(string.Empty));
+
+
+
         public object Icon
         {
             get { return (object)GetValue(IconProperty); }
@@ -33,6 +48,11 @@ namespace EE3206_WPF.Components
         public CustomeUserInput()
         {
             InitializeComponent();
+        }
+
+        private void _passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            Password = _passwordBox.Password;
         }
     }
 }

@@ -13,5 +13,6 @@ namespace EE3206_WPF.Database
         public DbSet<Admin> Admins { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

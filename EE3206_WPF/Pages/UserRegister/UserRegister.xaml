@@ -16,59 +16,73 @@
         <Grid Background="#262537">
             <Grid.RowDefinitions>
 
-                <RowDefinition Height="100px"/>
-                <RowDefinition Height="460px"/>
-                <RowDefinition Height="80px"/>
-                <RowDefinition Height="80px"/>
+                <RowDefinition Height="88"/>
+                <RowDefinition Height="499"/>
+                <RowDefinition Height="54"/>
+                <RowDefinition Height="79"/>
             </Grid.RowDefinitions>
-            <Rectangle VerticalAlignment="Bottom" Grid.Row="0" Width="100" Height="80">
+            <Rectangle VerticalAlignment="Top" Grid.Row="0" Height="80" Margin="270,11,270,0" Grid.RowSpan="2">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="/assets/logo.png"/>
                 </Rectangle.Fill>
             </Rectangle>
 
-            <Grid Grid.Row="1" Width="500" Margin="9">
+            <Grid Grid.Row="1" Margin="70,9,70,9">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
-                    <RowDefinition Height="320"/>
-                    <RowDefinition Height="91"/>
+                    <RowDefinition Height="366"/>
+                    <RowDefinition Height="72"/>
+                    <RowDefinition Height="33"/>
                 </Grid.RowDefinitions>
                 <TextBlock Foreground="White" Style="{DynamicResource UserRegister}" Text="USER REGISTER" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Height="32" Width="140"/>
-                <Grid Grid.Row="1" Margin="20,20,20,0" Height="265" VerticalAlignment="Top">
+                <Grid Grid.Row="1" Margin="20,10,20,0" Height="415" VerticalAlignment="Top" Grid.RowSpan="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="10"/>
                         <RowDefinition Height="60"/>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="10"/>
                         <RowDefinition Height="60"/>
 
                     </Grid.RowDefinitions>
-                    <components1:CustomeUserInput Grid.Row="0">
-                        <components1:CustomeUserInput.Icon>
+                    <components1:TextInput x:Name="UserName" Grid.Row="0">
+                        <components1:TextInput.Icon>
                             <Path  Data="{StaticResource User}" Width="28"/>
-                        </components1:CustomeUserInput.Icon>
-                    </components1:CustomeUserInput>
-                    <components1:CustomeUserInput Grid.Row="2">
-                        <components1:CustomeUserInput.Icon>
-                            <Path  Data="{StaticResource User}" Width="28"/>
-                        </components1:CustomeUserInput.Icon>
-                    </components1:CustomeUserInput>
+                        </components1:TextInput.Icon>
+                    </components1:TextInput>
+                    <components1:TextInput  x:Name="Email" Grid.Row="2">
+                        <components1:TextInput.Icon>
+                            <Path  Data="{StaticResource Email}" Width="28"/>
+                        </components1:TextInput.Icon>
+                    </components1:TextInput>
+                    <components1:TextInput  x:Name="TelephoneNum" Grid.Row="4">
+                        <components1:TextInput.Icon>
+                            <Path  Data="{StaticResource Mobile}" Width="28"/>
+                        </components1:TextInput.Icon>
+                    </components1:TextInput>
 
-                    <components1:CustomeUserInput Grid.Row="5">
+                    <components1:CustomeUserInput Password="{Binding Password,UpdateSourceTrigger=PropertyChanged}"  x:Name="Passwordin" Grid.Row="6">
                         <components1:CustomeUserInput.Icon>
                             <Path   Data="{StaticResource pass}" Width="28"/>
                         </components1:CustomeUserInput.Icon>
                     </components1:CustomeUserInput>
-                </Grid>
-                <components1:RoundButton Grid.Row="1" ButtonTilte="Login" Margin="0,290,0,0" Grid.RowSpan="2" >
 
-                </components1:RoundButton>
+                    <components1:CustomeUserInput  x:Name="RePassword" Grid.Row="8">
+                        <components1:CustomeUserInput.Icon>
+                            <Path   Data="{StaticResource rEenter}" Width="28"/>
+                        </components1:CustomeUserInput.Icon>
+                    </components1:CustomeUserInput>
+                </Grid>
+                <components1:RoundButton Submitclick="RoundButton_Submitclick" Grid.Row="2" ButtonTilte="Register" Margin="0,0,0,4" RenderTransformOrigin="0.496,1.167" />
 
             </Grid >
-            <TextBlock Margin="0,0,0,40" Width="397" HorizontalAlignment="Center" Grid.Row="2" FontSize="24" Foreground="White">Already Have an Account :
+            <TextBlock Margin="0,10,0,10" Width="396" HorizontalAlignment="Center" Grid.Row="2" FontSize="24" Foreground="White">Already Have an Account :
             <Hyperlink Foreground="#BB68E4" TextDecorations="none">Click Here</Hyperlink>
             </TextBlock>
-            <TextBlock Foreground="White" Margin="0,0,0,40" Width="450" HorizontalAlignment="Center" Grid.Row="3" FontSize="24" >Click Here For Login as Admini
+            <TextBlock Foreground="White" Margin="0,10,0,35" Width="440" HorizontalAlignment="Center" Grid.Row="3" FontSize="24" >Click Here For Login as Admini
             <Hyperlink Foreground="#BB68E4" TextDecorations="none">Click Here</Hyperlink>
             </TextBlock>
         </Grid>
@@ -78,6 +92,6 @@
                 </ImageBrush>
             </Rectangle.Fill>
         </Rectangle>
-
+        <components1:PopUpWindow CloseEnv="popwindow_CloseEnv"  Width="450" Height="200"  VerticalAlignment="Center" x:Name="popwindow" Grid.ColumnSpan="2" Margin="415,0,415,0" />
     </Grid>
 </UserControl>

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -110,7 +111,9 @@ namespace EE3206_WPF.Pages.AddServises
 
         private void popwindow_CloseEnv(object sender, RoutedEventArgs e)
         {
+
             popwindow.isOpen = false;
+
         }
     }
 }

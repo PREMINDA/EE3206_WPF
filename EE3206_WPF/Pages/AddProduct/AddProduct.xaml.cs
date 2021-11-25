@@ -62,6 +62,7 @@ namespace EE3206_WPF.Pages.AddProduct
                     }
                     else 
                     {
+                       
                         File.Copy(filePate, System.IO.Path.Combine(@"E:\asd\product", ProdName.TextVal.ToString() + ".jpg"));
                         repository.Products.Add(product);
                         repository.SaveChanges();
