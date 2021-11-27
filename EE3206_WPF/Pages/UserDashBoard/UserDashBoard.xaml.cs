@@ -1,6 +1,4 @@
 ﻿using EE3206_WPF.Components;
-using EE3206_WPF.Database;
-using EE3206_WPF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,35 +14,30 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EE3206_WPF.Pages.AdminDashBoard
+namespace EE3206_WPF.Pages.UserDashBoard
 {
     /// <summary>
-    /// Interaction logic for AdminDashBoard.xaml
+    /// Interaction logic for UserDashBoard.xaml
     /// </summary>
-    public partial class AdminDashBoard : Page
+    public partial class UserDashBoard : Page
     {
-        public AdminDashBoard()
+        public UserDashBoard()
         {
             InitializeComponent();
-            var w = Application.Current.Windows[0];
-            User newuser = (User)w.DataContext;
-            int i = 5;
         }
 
-        public static implicit operator Frame(AdminDashBoard v)
-        {
-            throw new NotImplementedException();
-        }
-
-        private void NavClick_User(object sender, RoutedEventArgs e)
+        private void LandingPageButton_NavClick(object sender, RoutedEventArgs e)
         {
             var ClickButton = e.OriginalSource as LandingPageButton;
-            NavigationService.Navigate(ClickButton.NavUri);
+           // NavigationService.Navigate(ClickButton.NavUri);
+            NavigationService nav = NavigationService.GetNavigationService(this);
+            nav.Navigate(ClickButton.NavUri);
             if (NavigationService.CanGoBack)
             {
                 NavigationService.RemoveBackEntry();
             }
-
         }
+
+       
     }
 }

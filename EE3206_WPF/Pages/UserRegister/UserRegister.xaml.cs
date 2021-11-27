@@ -1,5 +1,6 @@
 ﻿using EE3206_WPF.Database;
 using EE3206_WPF.Models;
+using EE3206_WPF.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,11 +29,17 @@ namespace EE3206_WPF.Pages.UserRegister
 
         public string Password { get { return _password; } set { _password = value;} }
 
-        public object NavigationService { get; private set; }
+       
 
         public UserRegister()
         {
             InitializeComponent();
+            Uri loglink = new Uri("/Pages/UserLogin/UserLogin.xaml", UriKind.Relative);
+            _userLogLink.NavigateUri = loglink;
+
+            Uri adminLoglink = new Uri("/Pages/AdminLogin/AdminLogin.xaml", UriKind.Relative);
+            _adminLogLink.NavigateUri = adminLoglink;
+
         }
 
         private void RoundButton_Submitclick(object sender, RoutedEventArgs e)
@@ -67,8 +74,8 @@ namespace EE3206_WPF.Pages.UserRegister
                 }
                 else
                 {
-                    Admin exsitsAdmin = repository.Admins.Where(m => m.Email == user.Email).Select(m => m).SingleOrDefault();
-                    if (exsitsAdmin != null)
+                    User exsitsUser = repository.Users.Where(m => m.Email == user.Email).Select(m => m).SingleOrDefault();
+                    if (exsitsUser != null)
                     {
                         popwindow.TextVal = "Enterde Email Already Exists";
                         popwindow.isOpen = true;
@@ -77,6 +84,10 @@ namespace EE3206_WPF.Pages.UserRegister
                     {
                         repository.Users.Add(user);
                         repository.SaveChanges();
+
+                        NavigationService nav = NavigationService.GetNavigationService(this);
+                        nav.Navigate(new Uri("/Pages/UserLogin/UserLogin.xaml", UriKind.Relative));
+                        
                     }
 
                 }

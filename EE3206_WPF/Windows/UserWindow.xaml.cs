@@ -10,22 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EE3206_WPF
+namespace EE3206_WPF.Windows
 {
-    
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Interaction logic for UserWindow.xaml
+    /// </summary>
+    public partial class UserWindow : Window
     {
-       
-        
-        public MainWindow()
+        public UserWindow()
         {
             InitializeComponent();
-
-
-            _FrameName.Source = new Uri("/Pages/AdminDashBoard/AdminDashBoard.xaml", UriKind.Relative);
+            
         }
     }
 }

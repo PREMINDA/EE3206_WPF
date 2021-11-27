@@ -16,12 +16,12 @@
         <Grid Background="#262537">
             <Grid.RowDefinitions>
 
-                <RowDefinition Height="88"/>
+                <RowDefinition Height="100"/>
                 <RowDefinition Height="499"/>
                 <RowDefinition Height="54"/>
                 <RowDefinition Height="79"/>
             </Grid.RowDefinitions>
-            <Rectangle VerticalAlignment="Top" Grid.Row="0" Height="80" Margin="270,11,270,0" Grid.RowSpan="2">
+            <Rectangle VerticalAlignment="Top" Grid.Row="0" Width="100" Height="80" Margin="270,20,270,0">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="/assets/logo.png"/>
                 </Rectangle.Fill>
@@ -34,7 +34,7 @@
                     <RowDefinition Height="72"/>
                     <RowDefinition Height="33"/>
                 </Grid.RowDefinitions>
-                <TextBlock Foreground="White" Style="{DynamicResource UserRegister}" Text="USER REGISTER" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Height="32" Width="140"/>
+                <TextBlock Foreground="White" Style="{DynamicResource UserRegister}" Text="USER REGISTER" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Height="32" Width="178"/>
                 <Grid Grid.Row="1" Margin="20,10,20,0" Height="415" VerticalAlignment="Top" Grid.RowSpan="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
@@ -80,10 +80,10 @@
 
             </Grid >
             <TextBlock Margin="0,10,0,10" Width="396" HorizontalAlignment="Center" Grid.Row="2" FontSize="24" Foreground="White">Already Have an Account :
-            <Hyperlink Foreground="#BB68E4" TextDecorations="none">Click Here</Hyperlink>
+            <Hyperlink x:Name="_userLogLink" NavigateUri="Pages/UserLogin/UserLogin.xaml" Foreground="#BB68E4" TextDecorations="none">Click Here</Hyperlink>
             </TextBlock>
             <TextBlock Foreground="White" Margin="0,10,0,35" Width="440" HorizontalAlignment="Center" Grid.Row="3" FontSize="24" >Click Here For Login as Admini
-            <Hyperlink Foreground="#BB68E4" TextDecorations="none">Click Here</Hyperlink>
+            <Hyperlink  x:Name="_adminLogLink" Foreground="#BB68E4" TextDecorations="none">Click Here</Hyperlink>
             </TextBlock>
         </Grid>
         <Rectangle  Grid.Column="1">

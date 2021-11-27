@@ -35,14 +35,14 @@
                     <RowDefinition Height="200"/>
                     <RowDefinition Height="90px"/>
                 </Grid.RowDefinitions>
-                <TextBlock Foreground="White"  Text="USER LOGIN" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <TextBlock Foreground="White"  Text="ADMIN LOGIN" FontWeight="Bold" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 <Grid Grid.Row="1" Margin="20">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="60"/>
                     </Grid.RowDefinitions>
-                    <components1:CustomeUserInput Grid.Row="0">
+                    <components1:CustomeUserInput  Grid.Row="0">
                         <components1:CustomeUserInput.Icon>
                             <Path  Data="{StaticResource User}" Width="28"/>
                         </components1:CustomeUserInput.Icon>
@@ -57,10 +57,10 @@
                 </components1:RoundButton>
             </Grid >
             <TextBlock Margin="0,0,0,40" Width="366" HorizontalAlignment="Center" Grid.Row="2" FontSize="24" Foreground="White">Go Back To User Login 
-            <Hyperlink Foreground="#BB68E4" TextDecorations="none">Click Here</Hyperlink>
+            <Hyperlink  x:Name="_userLogLink" Foreground="#BB68E4" TextDecorations="none">Click Here</Hyperlink>
             </TextBlock>
             <TextBlock Foreground="White" Margin="0,0,0,40" Width="387" HorizontalAlignment="Center" Grid.Row="3" FontSize="24" >Go Back To User Register
-            <Hyperlink Foreground="#BB68E4" TextDecorations="none">Click Here</Hyperlink>
+            <Hyperlink  x:Name="_useRegLink" Foreground="#BB68E4" TextDecorations="none">Click Here</Hyperlink>
             </TextBlock>
         </Grid>
         <Rectangle  Grid.Column="1">

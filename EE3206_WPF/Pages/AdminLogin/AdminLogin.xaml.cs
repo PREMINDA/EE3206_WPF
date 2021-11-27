@@ -23,6 +23,12 @@ namespace EE3206_WPF.Pages.AdminLogin
         public AdminLogin()
         {
             InitializeComponent();
+
+            Uri loglink = new Uri("/Pages/UserLogin/UserLogin.xaml", UriKind.Relative);
+            _userLogLink.NavigateUri = loglink;
+
+            Uri reglink = new Uri("/Pages/UserRegister/UserRegister.xaml", UriKind.Relative);
+            _useRegLink.NavigateUri = reglink;
         }
     }
 }
