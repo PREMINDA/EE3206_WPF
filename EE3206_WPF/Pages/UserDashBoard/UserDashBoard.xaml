@@ -32,7 +32,7 @@
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
-        <components:LandingPageButton  NavClick="LandingPageButton_NavClick"  NavUri="/Pages/AdminList/AdminList.xaml"  Grid.Row="1" Grid.Column="2">
+        <components:LandingPageButton  NavClick="LandingPageButton_NavClick"  NavUri="/Pages/UserServie/UserService.xaml"  Grid.Row="1" Grid.Column="2">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource userservice}"/>
             </components:LandingPageButton.Icon>
