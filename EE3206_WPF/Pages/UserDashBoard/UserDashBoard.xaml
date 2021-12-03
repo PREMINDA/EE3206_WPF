@@ -42,7 +42,7 @@
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
-        <components:LandingPageButton  NavClick="LandingPageButton_NavClick"  NavUri="/Pages/AdminList/AdminList.xaml"  Grid.Row="1" Grid.Column="3">
+        <components:LandingPageButton  NavClick="LandingPageButton_NavClick"  NavUri="/Pages/Cart/Cart.xaml"  Grid.Row="1" Grid.Column="3">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource Cart}"/>
             </components:LandingPageButton.Icon>

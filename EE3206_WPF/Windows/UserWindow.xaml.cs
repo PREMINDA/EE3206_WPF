@@ -29,10 +29,15 @@ namespace EE3206_WPF.Windows
 
         }
 
-        public void GetUser(object newuser)
+        public void SetUser(object newuser)
         {
             user = (User)newuser;
             _userName.Text = user.Name;
+        }
+
+        public object GetUser() 
+        {
+            return user;
         }
 
 

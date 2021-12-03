@@ -15,5 +15,10 @@ namespace EE3206_WPF.Models
         public User user { get; set; }
 
         public ICollection<OrderItem> orderItems { get; set; }
+
+        public Order()
+        {
+            this.orderItems = new List<OrderItem>();
+        }
     }
 }

@@ -52,12 +52,11 @@ namespace EE3206_WPF.Pages.UserLogin
                     if (exsitsUser.Password == user.Password)
                     {
                         UserWindow userWindow = new UserWindow();
-                        userWindow.GetUser(exsitsUser);
+                        userWindow.SetUser(exsitsUser);
                         userWindow.Show();
                         
-                        var w = Application.Current.Windows[0];
-                        w.DataContext = exsitsUser;
-                        if (w != null) w.Hide();
+                        var w = Application.Current.Windows[0];              
+                        if (w != null) w.Close();
 
 
                     }
