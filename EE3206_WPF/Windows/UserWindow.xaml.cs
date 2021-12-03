@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EE3206_WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,10 +20,21 @@ namespace EE3206_WPF.Windows
     /// </summary>
     public partial class UserWindow : Window
     {
+        User user;
         public UserWindow()
         {
             InitializeComponent();
-            
+         
+           // _userName.Text = user.Name;
+
         }
+
+        public void GetUser(object newuser)
+        {
+            user = (User)newuser;
+            _userName.Text = user.Name;
+        }
+
+
     }
 }

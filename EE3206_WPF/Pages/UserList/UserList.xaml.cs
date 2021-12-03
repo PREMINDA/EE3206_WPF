@@ -1,6 +1,5 @@
 ﻿using EE3206_WPF.Components;
 using EE3206_WPF.Database;
-using EE3206_WPF.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,34 +15,34 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EE3206_WPF.Pages.AdminList
+namespace EE3206_WPF.Pages.UserList
 {
-    
-    public partial class AdminList : Page
+    /// <summary>
+    /// Interaction logic for UserList.xaml
+    /// </summary>
+    public partial class UserList : Page
     {
         private UsersDetail usersDetail;
         private int id;
         DataBaseRepository repository = new DataBaseRepository();
 
-        public AdminList()
+        public UserList()
         {
-           
             InitializeComponent();
-            loadData();  
-            
+            loadData();
         }
 
         private void loadData()
         {
 
-                listdata.ItemsSource=repository.Admins.ToList();
+            listdata.ItemsSource = repository.Users.ToList();
 
         }
 
         private void BrowseBackButton_BackButton(object sender, RoutedEventArgs e)
         {
-           
-            
+
+
         }
 
         private void UsersDetail_DeleteButton(object sender, RoutedEventArgs e)
@@ -59,7 +58,7 @@ namespace EE3206_WPF.Pages.AdminList
 
         private void deleteItem(int id)
         {
-            repository.Admins.Remove(repository.Admins.Find(id));
+            repository.Users.Remove(repository.Users.Find(id));
             repository.SaveChanges();
             loadData();
         }
@@ -69,6 +68,4 @@ namespace EE3206_WPF.Pages.AdminList
             popwindow.isOpen = false;
         }
     }
-
-    
 }

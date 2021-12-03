@@ -52,7 +52,7 @@ namespace EE3206_WPF.Pages.UserLogin
                     if (exsitsUser.Password == user.Password)
                     {
                         UserWindow userWindow = new UserWindow();
-
+                        userWindow.GetUser(exsitsUser);
                         userWindow.Show();
                         
                         var w = Application.Current.Windows[0];

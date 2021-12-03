@@ -26,7 +26,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <components:LandingPageButton  Grid.Row="0" Grid.Column="0">
+        <components:LandingPageButton  NavClick="NavClick_User"  NavUri="/Pages/UserList/UserList.xaml"  Grid.Row="0" Grid.Column="0">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource User}"/>
             </components:LandingPageButton.Icon>

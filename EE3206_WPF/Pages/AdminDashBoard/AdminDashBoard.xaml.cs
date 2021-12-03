@@ -26,9 +26,7 @@ namespace EE3206_WPF.Pages.AdminDashBoard
         public AdminDashBoard()
         {
             InitializeComponent();
-            var w = Application.Current.Windows[0];
-            User newuser = (User)w.DataContext;
-            int i = 5;
+            
         }
 
         public static implicit operator Frame(AdminDashBoard v)

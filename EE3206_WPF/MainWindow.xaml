@@ -29,7 +29,7 @@
                 </Ellipse>
             </Border>
         </Grid>
-        <Frame x:Name="_FrameName" NavigationUIVisibility="Hidden" Grid.Row="3" Source="/Pages/UserRegister/UserRegister.xaml">
+        <Frame x:Name="_FrameName" NavigationUIVisibility="Hidden" Grid.Row="3" Source="/Pages/AdminDashBoard/AdminDashBoard.xaml">
             
             
 
