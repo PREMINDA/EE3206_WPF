@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EE3206_WPF.Models
 {
-    class User
+    public class User
     {
         [Key]
         public int ID { get; set; }

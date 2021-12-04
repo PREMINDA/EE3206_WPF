@@ -28,24 +28,23 @@ namespace EE3206_WPF.Pages.Cart
             InitializeComponent();
             var w = (UserWindow)Application.Current.Windows[0];
             User user = (User)w.GetUser();
-            int a = 2;
+            ICollection<OrderItem> orderItems = (ICollection<OrderItem>)w.GetOrderItems();
 
             using (DataBaseRepository repository = new DataBaseRepository()) 
             {
-                Product pro = repository.Products.Find(1);
-                int b = 2;
 
-                Order or = new Order();
-                OrderItem newor = new OrderItem();
-                newor.product = pro;
-                newor.price = pro.price;
-                or.user = user;
-                or.orderItems.Add(newor);
+                //Order or = new Order();
+                //User us = new User()
+                //{
+                //    ID = user.ID
+                //};
 
-                repository.Orders.Add(or);
-                repository.SaveChanges();
+                //or.UserID = us.ID;
+                //or.OrderItem = orderItems;
 
-
+                //repository.Orders.Add(or);
+                //repository.SaveChanges();
+                var l = repository.Orders.Include("OrderItem").ToList();
             }
         }
     }

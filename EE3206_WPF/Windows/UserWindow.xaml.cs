@@ -21,6 +21,8 @@ namespace EE3206_WPF.Windows
     public partial class UserWindow : Window
     {
         User user;
+        ICollection<OrderItem> OrderItems = new List<OrderItem>();
+
         public UserWindow()
         {
             InitializeComponent();
@@ -38,6 +40,16 @@ namespace EE3206_WPF.Windows
         public object GetUser() 
         {
             return user;
+        }
+
+        public void SetOrderItems(OrderItem product)
+        {
+            OrderItems.Add(product);
+        }
+
+        public ICollection<OrderItem> GetOrderItems()
+        {
+            return OrderItems;
         }
 
 

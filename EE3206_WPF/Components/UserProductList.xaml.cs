@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EE3206_WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,6 +54,15 @@ namespace EE3206_WPF.Components
         public static readonly DependencyProperty ProductNameProperty =
             DependencyProperty.Register("ProductName", typeof(string), typeof(UserProductList), new PropertyMetadata(string.Empty));
 
+        public static readonly RoutedEvent ClickEvent =
+           EventManager.RegisterRoutedEvent(nameof(AddCart), RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(LandingPageButton));
+
+        public event RoutedEventHandler AddCart
+        {
+            add { AddHandler(ClickEvent, value); }
+            remove { RemoveHandler(ClickEvent, value); }
+        }
+
 
 
         public UserProductList()
@@ -60,6 +70,10 @@ namespace EE3206_WPF.Components
             InitializeComponent();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(ClickEvent));
+        }
     }
 
 }

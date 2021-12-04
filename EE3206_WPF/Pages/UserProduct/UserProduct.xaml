@@ -20,14 +20,18 @@
 
     <Grid Background="#262537" >
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="600"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="73*"/>
+            <RowDefinition Height="542"/>
+            <RowDefinition Height="105*"/>
         </Grid.RowDefinitions>
-        <ListBox Grid.Row="1" Name="productdata" Background="Transparent" Margin="40,0,40,0">
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Text="Items In Cart : " FontSize="18"></TextBlock>
+            <TextBlock x:Name="_Count" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Text="0" FontSize="18"></TextBlock>
+        </StackPanel>
+        <ListBox Grid.Row="1" Name="productdata" Background="Transparent" Margin="70,10,70,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <components1:UserProductList Height="280" Price="{Binding price}" ProductName="{Binding productName}" Description="{Binding description}"/>
+                    <components1:UserProductList AddCart="UserProductList_AddCart" Height="200" Price="{Binding price}" ProductName="{Binding productName}" Description="{Binding description}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

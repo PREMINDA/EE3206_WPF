@@ -23,11 +23,11 @@
         </StackPanel>
 
         <Frame  Name="_FrameName" NavigationUIVisibility="Hidden" Grid.Row="3" Source="/Pages/UserRegister/UserRegister.xaml">
-
-
-
         </Frame>
 
     </Grid>
 
 </Window>
+    
+
+    <!--/Pages/UserRegister/UserRegister.xaml-->

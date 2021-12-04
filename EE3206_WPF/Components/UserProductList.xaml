@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:EE3206_WPF.Components"
              mc:Ignorable="d" 
              x:Name="UserProductListItem"
-             d:DesignHeight="260" d:DesignWidth="1080">
+             d:DesignHeight="200" d:DesignWidth="1080">
     <UserControl.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -74,17 +74,17 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="21*"/>
-                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="62*"/>
+                    <RowDefinition Height="57*"/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Grid.Column="0">
                     <TextBlock Foreground="#A500FE" Text="{Binding ProductName,ElementName=UserProductListItem}" FontFamily="Akrobat SemiBold" FontSize="24"/>
-                    <TextBlock Foreground="White" Text="{Binding Description,ElementName=UserProductListItem}" FontFamily="Akrobat SemiBold" FontSize="24" Height="198"/>
+                    <TextBlock Foreground="White" Text="{Binding Description,ElementName=UserProductListItem}" FontFamily="Akrobat SemiBold" FontSize="24" Height="69"/>
                 </StackPanel>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="417*"></ColumnDefinition>
-                        <ColumnDefinition Width="307*"></ColumnDefinition>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="#A500FE" VerticalAlignment="Center" Text="PRICE : " FontFamily="Akrobat SemiBold" FontSize="24"/>
@@ -93,7 +93,7 @@
                         <TextBlock>.00$</TextBlock>
                         </TextBlock>
                     </StackPanel>
-                    <Button Foreground="White" Style="{DynamicResource AddButton}" Grid.Column="1" Width="180" Height="60" Margin="117,8,10,9" FontFamily="Akrobat SemiBold" FontSize="22">Add to Cart</Button>
+                    <Button Click="Button_Click" Foreground="White" Style="{DynamicResource AddButton}" Grid.Column="1" Width="180" Height="60" Margin="117,8,10,9" FontFamily="Akrobat SemiBold" FontSize="22">Add to Cart</Button>
                 </Grid>
             </Grid>
         </Grid>
