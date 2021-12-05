@@ -25,5 +25,12 @@ namespace EE3206_WPF.Models
         [Column("Description")]
         [Required]
         public string description { get; set; }
+
+        //public override string ToString()
+        //{
+        //    return productName;
+        //}
     }
 }
+
+    

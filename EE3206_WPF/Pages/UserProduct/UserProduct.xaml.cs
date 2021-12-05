@@ -48,16 +48,17 @@ namespace EE3206_WPF.Pages.UserProduct
             
             OrderItem newOrderItem = new OrderItem();
             newOrderItem.ProductID = productInfor.ID;
-            SetOrderItems(newOrderItem);
+            SetOrderItems(newOrderItem,productInfor);
            
             
 
         }
 
-        private void SetOrderItems(OrderItem oi) 
+        private void SetOrderItems(OrderItem oi,Product pr) 
         {
             var w = (UserWindow)Application.Current.Windows[0];
             w.SetOrderItems(oi);
+            w.SetProduct(pr);
             _Count.Text=w.GetOrderItems().Count().ToString();
         }
     }

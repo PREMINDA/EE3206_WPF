@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:EE3206_WPF.Pages.Cart"
+      xmlns:local="clr-namespace:EE3206_WPF.Pages.Cart" xmlns:components1="clr-namespace:EE3206_WPF.Components"
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Cart">
@@ -13,29 +13,17 @@
             <RowDefinition />
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
-        <!--<components1:PopUpWindow CloseEnv="popwindow_CloseEnv"  Width="450" Height="200"  VerticalAlignment="Center" x:Name="popwindow" Grid.Column="1" >
-
-        </components1:PopUpWindow>-->
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="640"/>
-                <ColumnDefinition Width="640"/>
-            </Grid.ColumnDefinitions>
-            <!--<ListBox Width="640" Grid.Column="0" BorderThickness="1,1,1,1"  Name="productdata" Background="Transparent">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <components1:ServiceDetail  ID="{Binding ID}" SubTitle="{Binding productName}" Price="{Binding price}" DeleteListItem="Product_DeleteButton"  Width="600" Title="Product Name" />
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>-->
-            <!--<ListBox Width="640" Grid.Column="1"  BorderThickness="1,1,1,1" Name="servicedata" Background="Transparent">
-                <ListBox.ItemTemplate>
-                    <DataTemplate>
-                        <components1:ServiceDetail ID="{Binding ID}" SubTitle="{Binding serviceName}" Price="{Binding price}" DeleteListItem="Service_DeleteButton"  Width="600" Title="Service Name" />
-                    </DataTemplate>
-                </ListBox.ItemTemplate>
-            </ListBox>-->
-        </Grid>
-        <!--<components1:BrowseBackButton Grid.Row="1"/>-->
+        <ListBox Name="productdata" Background="Transparent" Margin="70,10,70,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Width="100" Foreground="White" Text="{Binding  productName}"></TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <components1:PopUpWindow Width="450" Height="200" ></components1:PopUpWindow>
+        <StackPanel HorizontalAlignment="Center" Margin="0,2,0,0" Grid.Row="1" Orientation="Horizontal">
+            <components1:BrowseBackButton Margin="0,0,24,0" Grid.Row="1"/>
+            <components1:AddButton AddBtnClick="AddButton_AddBtnClick" Margin="24,0,0,0" tagName="Checkout"/>
+        </StackPanel>
     </Grid>
 </Page>

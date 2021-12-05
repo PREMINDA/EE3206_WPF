@@ -28,7 +28,10 @@ namespace EE3206_WPF.Pages.Cart
             InitializeComponent();
             var w = (UserWindow)Application.Current.Windows[0];
             User user = (User)w.GetUser();
-            ICollection<OrderItem> orderItems = (ICollection<OrderItem>)w.GetOrderItems();
+            ICollection<OrderItem> orderItems = w.GetOrderItems();
+            ICollection<Product> products = w.GetProducts();
+            string[] asd = {"a","b" };
+            productdata.ItemsSource = products.ToList();
 
             using (DataBaseRepository repository = new DataBaseRepository()) 
             {
@@ -44,8 +47,13 @@ namespace EE3206_WPF.Pages.Cart
 
                 //repository.Orders.Add(or);
                 //repository.SaveChanges();
-                var l = repository.Orders.Include("OrderItem").ToList();
+                //var l = repository.Orders.Include("OrderItem").ToList();
             }
+        }
+
+        private void AddButton_AddBtnClick(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -22,6 +22,7 @@ namespace EE3206_WPF.Windows
     {
         User user;
         ICollection<OrderItem> OrderItems = new List<OrderItem>();
+        ICollection<Product> products = new List<Product>();
 
         public UserWindow()
         {
@@ -51,6 +52,17 @@ namespace EE3206_WPF.Windows
         {
             return OrderItems;
         }
+
+        public void SetProduct(Product product)
+        {
+            products.Add(product);
+        }
+
+        public ICollection<Product> GetProducts()
+        {
+            return products;
+        }
+
 
 
     }
