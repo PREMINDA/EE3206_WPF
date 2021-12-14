@@ -26,7 +26,7 @@
         <ListBox Grid.Row="1" Name="servicedata" Background="Transparent" Margin="70,10,70,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <components1:UserProductList Height="200" Link="{Binding Link}" Price="{Binding price}" ProductName="{Binding serviceName}" Description="{Binding description}"/>
+                    <components1:UserProductList VisibilityITM="Hidden"  Height="200" Link="{Binding Link}" Price="{Binding price}" ProductName="{Binding serviceName}" Description="{Binding description}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

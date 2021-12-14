@@ -6,21 +6,20 @@
              xmlns:local="clr-namespace:EE3206_WPF.Components"
              mc:Ignorable="d" 
              x:Name="CartItemComp"
-             d:DesignHeight="140" d:DesignWidth="800">
-    <Border Margin="0,6,0,6" Width="800" Background="#393352" CornerRadius="18">
+             d:DesignHeight="140" d:DesignWidth="700">
+    <Border Margin="0,6,0,6" Width="700" Background="#393352" CornerRadius="18">
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="423*"/>
+                <ColumnDefinition Width="277*"/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="1" VerticalAlignment="Center">
-                <TextBlock Foreground="White" Margin="24,0,0,0" Text="Product" FontSize="22" FontFamily="Akrobat"/>
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" Height="100">
+                <TextBlock Foreground="#A500FE" Margin="24,0,0,24" Text="Product" FontSize="22" FontFamily="Akrobat"/>
                 <TextBlock Foreground="White" Margin="24,0,0,0" Text="{Binding ProductName,ElementName=CartItemComp}" FontSize="22" FontFamily="Akrobat"/>
             </StackPanel>
-            <StackPanel Grid.Column="2" VerticalAlignment="Center">
-                <TextBlock Foreground="White" Margin="24,0,0,0" Text="Price" FontSize="22" FontFamily="Akrobat"/>
-                <TextBlock  Margin="12,0,0,0" VerticalAlignment="Center" Foreground="White" FontFamily="Akrobat SemiBold" FontSize="24" Width="362">
+            <StackPanel Grid.Column="1" VerticalAlignment="Center" Height="100">
+                <TextBlock Foreground="#A500FE" Margin="24,0,0,24" Text="Price" FontSize="22" FontFamily="Akrobat"/>
+                <TextBlock  Margin="12,0,0,0" Foreground="White" FontFamily="Akrobat SemiBold" FontSize="24" Width="259">
                     <TextBlock Text="{Binding PriceVal,ElementName=CartItemComp}"/>
                     <TextBlock>.00$</TextBlock>
                  </TextBlock>

@@ -19,10 +19,10 @@
             <RowDefinition />
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
-        <ListBox Name="productdata" Background="Transparent" Margin="220,10,220,0">
+        <ListBox Name="productdata" Background="Transparent" Margin="250,10,250,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <components1:CartItemList ProductName="{Binding productName}" PriceVal="{Binding price}"/>
+                    <components1:CartItemList  ProductName="{Binding productName}" PriceVal="{Binding price}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

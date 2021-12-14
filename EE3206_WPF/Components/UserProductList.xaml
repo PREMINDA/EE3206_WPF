@@ -82,7 +82,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Grid.Column="0">
                     <TextBlock Foreground="#A500FE" Text="{Binding ProductName,ElementName=UserProductListItem}" FontFamily="Akrobat SemiBold" FontSize="24"/>
-                    <TextBlock Foreground="White" Text="{Binding Description,ElementName=UserProductListItem}" FontFamily="Akrobat SemiBold" FontSize="24" Height="69"/>
+                    <TextBlock TextWrapping="Wrap" Foreground="White" Text="{Binding Description,ElementName=UserProductListItem}" FontFamily="Akrobat SemiBold" FontSize="18" Height="69"/>
                 </StackPanel>
                 <Grid Grid.Row="1">
                     <Grid.ColumnDefinitions>
@@ -96,9 +96,13 @@
                             <TextBlock>.00$</TextBlock>
                         </TextBlock>
                     </StackPanel>
-                    <Button Click="Button_Click" Foreground="White" Style="{DynamicResource AddButton}" Grid.Column="1" Width="180" Height="60" Margin="117,8,10,9" FontFamily="Akrobat SemiBold" FontSize="22">Add to Cart</Button>
+                    <Button Visibility="{Binding VisibilityITM,ElementName=UserProductListItem}"  Click="Button_Click" Foreground="White" Style="{DynamicResource AddButton}" Grid.Column="1" Width="180" Height="60" Margin="117,8,10,9" FontFamily="Akrobat SemiBold" FontSize="22">Add to Cart</Button>
                 </Grid>
             </Grid>
         </Grid>
     </Border>
 </UserControl>
+
+
+    
+   

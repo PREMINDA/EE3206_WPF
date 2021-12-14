@@ -29,7 +29,7 @@
                         <ColumnDefinition Width="560"/>
                         <ColumnDefinition Width="199*"/>
                     </Grid.ColumnDefinitions>
-                    <TextBlock Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Text="ADD PRODUCT INFORMATION" FontSize="34" FontFamily="Akrobat SemiBold"/>
+                    <TextBlock Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Text="ADD NEW SERVICE" FontSize="34" FontFamily="Akrobat SemiBold"/>
                     <Label Content="SERVISE NAME" Grid.Row="1" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" Height="42" Width="190" FontFamily="Akrobat"></Label>
                     <Label Content="SERVISE PRICE" Grid.Row="2" Foreground="White" FontSize="28" VerticalAlignment="Center" HorizontalAlignment="Center" Height="42" Width="190" FontFamily="Akrobat"></Label>
                     <Label Content="DESCRIPTION" Margin="0,24,0,0" Grid.Row="3" Foreground="White" FontSize="28" VerticalAlignment="Top" HorizontalAlignment="Center" Height="42" Width="190" FontFamily="Akrobat"></Label>

@@ -21,6 +21,24 @@ namespace EE3206_WPF.Components
     /// </summary>
     public partial class UserProductList : UserControl
     {
+
+
+
+
+        public string VisibilityITM
+        {
+            get { return (string)GetValue(VisibilityITMProperty); }
+            set { SetValue(VisibilityITMProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for VisibilityITM.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty VisibilityITMProperty =
+            DependencyProperty.Register("VisibilityITM", typeof(string), typeof(UserProductList), new PropertyMetadata("Visible"));
+
+
+
+
+
         public string Link
         {
             get { return (string)GetValue(LinkProperty); }
