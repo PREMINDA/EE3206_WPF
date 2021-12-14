@@ -21,19 +21,16 @@ namespace EE3206_WPF.Components
     public partial class ServiceDetail : UserControl
     {
 
-        //BitmapImage source = new BitmapImage(new Uri(@"E:\asd\service\asd.jpg"));
 
+        public string Link
+        {
+            get { return (string)GetValue(LinkProperty); }
+            set { SetValue(LinkProperty, value); }
+        }
 
-        //public BitmapImage ImagePath
-        //{
-        //    get { return (BitmapImage)GetValue(ImagePathProperty); }
-        //    set { SetValue(ImagePathProperty, value); }
-        //}
-
-        //// Using a DependencyProperty as the backing store for ImagePath.  This enables animation, styling, binding, etc...
-        //public static readonly DependencyProperty ImagePathProperty =
-        //    DependencyProperty.Register("ImagePath", typeof(BitmapImage), typeof(ServiceDetail), new PropertyMetadata(@"E:\asd\service\asd.jpg"));
-
+        // Using a DependencyProperty as the backing store for Link.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LinkProperty =
+            DependencyProperty.Register("Link", typeof(string), typeof(ServiceDetail), new PropertyMetadata(String.Empty));
 
 
         public string Title
@@ -102,6 +99,7 @@ namespace EE3206_WPF.Components
         public ServiceDetail()
         {
             InitializeComponent();
+            
         }
     }
 }

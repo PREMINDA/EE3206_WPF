@@ -21,6 +21,15 @@ namespace EE3206_WPF.Components
     /// </summary>
     public partial class UserProductList : UserControl
     {
+        public string Link
+        {
+            get { return (string)GetValue(LinkProperty); }
+            set { SetValue(LinkProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Link.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty LinkProperty =
+            DependencyProperty.Register("Link", typeof(string), typeof(UserProductList), new PropertyMetadata(String.Empty));
 
         public string Price
         {

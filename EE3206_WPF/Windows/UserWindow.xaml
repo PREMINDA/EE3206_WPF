@@ -20,22 +20,16 @@
                 <ColumnDefinition Width="70"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
-       
-                <Border Grid.Column="1" Background="AliceBlue" Width="70" Height="70" CornerRadius="100">
+            <Border Grid.Column="1" Background="AliceBlue" Width="70" Height="70" CornerRadius="100">
                     <Ellipse Height="60" Width="60">
                         <Ellipse.Fill>
                             <ImageBrush x:Name="Imagebr" ></ImageBrush>
                         </Ellipse.Fill>
                     </Ellipse>
                 </Border>
-                <TextBlock x:Name="_userName" Grid.Column="2" Margin="80,0,0,0" VerticalAlignment="Center" Foreground="White" Text="" FontFamily="Akrobat Black" FontSize="24"/>
-
+            <TextBlock x:Name="_userName" Grid.Column="2" Margin="80,0,0,0" VerticalAlignment="Center" Foreground="White" Text="" FontFamily="Akrobat Black" FontSize="24"/>
         </Grid>
         <Frame x:Name="_FrameName" NavigationUIVisibility="Hidden" Grid.Row="3" Source="/Pages/UserDashBoard/UserDashBoard.xaml">
-
-
-
         </Frame>
 
     </Grid>

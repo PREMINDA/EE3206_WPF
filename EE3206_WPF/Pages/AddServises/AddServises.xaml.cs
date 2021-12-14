@@ -60,6 +60,8 @@ namespace EE3206_WPF.Pages.AddServises
                     else
                     {
                         File.Copy(filePate, System.IO.Path.Combine(@"E:\asd\service", ServiceName.TextVal.ToString() + ".jpg"));
+                        string link = String.Format(@"E:\asd\service\{0}.jpg", ServiceName.TextVal.ToString());
+                        service.Link = link;
                         repository.Services.Add(service);
                         repository.SaveChanges();
 

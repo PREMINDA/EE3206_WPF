@@ -63,6 +63,15 @@ namespace EE3206_WPF.Windows
             return products;
         }
 
+        public void clearCartList()
+        {
+            products = new List<Product>();
+        }
+
+        public void clearOrderList()
+        {
+            OrderItems = new List<OrderItem>();
+        }
 
 
     }

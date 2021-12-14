@@ -35,14 +35,14 @@
             <ListBox Width="640" Grid.Column="0" BorderThickness="1,1,1,1"  Name="productdata" Background="Transparent">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <components1:ServiceDetail  ID="{Binding ID}" SubTitle="{Binding productName}" Price="{Binding price}" DeleteListItem="Product_DeleteButton"  Width="600" Title="Product Name" />
+                        <components1:ServiceDetail  ID="{Binding ID}" SubTitle="{Binding productName}" Price="{Binding price}" Link="{Binding Link}" DeleteListItem="Product_DeleteButton"  Width="600" Title="Product Name" />
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
             <ListBox Width="640" Grid.Column="1"  BorderThickness="1,1,1,1" Name="servicedata" Background="Transparent">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <components1:ServiceDetail ID="{Binding ID}" SubTitle="{Binding serviceName}" Price="{Binding price}" DeleteListItem="Service_DeleteButton"  Width="600" Title="Service Name" />
+                        <components1:ServiceDetail ID="{Binding ID}" SubTitle="{Binding serviceName}" Price="{Binding price}" Link="{Binding Link}" DeleteListItem="Service_DeleteButton"  Width="600" Title="Service Name" />
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>

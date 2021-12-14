@@ -3,6 +3,7 @@ using EE3206_WPF.Database;
 using EE3206_WPF.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,6 +29,7 @@ namespace EE3206_WPF.Pages.Management
         
 
         DataBaseRepository repository = new DataBaseRepository();
+        String ImageLink;
 
         public Managment()
         {
@@ -71,14 +73,21 @@ namespace EE3206_WPF.Pages.Management
         //Deleting Specific Item
         private void deleteItem(int id,MaType type)
         {
+            
+       
             if (type == MaType.product)
             {
+                ImageLink = repository.Products.Find(id).Link;
                 repository.Products.Remove(repository.Products.Find(id));
+
             }
             else if (type == MaType.service) 
             {
+                ImageLink = repository.Services.Find(id).Link;
                 repository.Services.Remove(repository.Services.Find(id));
-            } 
+                
+            }
+            
             repository.SaveChanges();
             loadData();
         }
@@ -87,6 +96,11 @@ namespace EE3206_WPF.Pages.Management
         {
             popwindow.isOpen = false;
         }
+
+        //private void dleteImage(String filePath) 
+        //{
+        //    File.Delete(filePath);
+        //}
         
     }
 }

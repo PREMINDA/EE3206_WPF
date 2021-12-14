@@ -25,5 +25,9 @@ namespace EE3206_WPF.Models
         [Column("Description")]
         [Required]
         public string description { get; set; }
+
+        [Column("Link")]
+        [Required]
+        public string Link { get; set; }
     }
 }

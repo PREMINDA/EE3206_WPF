@@ -7,23 +7,33 @@
       mc:Ignorable="d" 
       d:DesignHeight="720" d:DesignWidth="1280"
       Title="Cart">
-
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/ScrollerStyleResource.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid Background="#262537">
         <Grid.RowDefinitions>
             <RowDefinition />
             <RowDefinition Height="80" />
         </Grid.RowDefinitions>
-        <ListBox Name="productdata" Background="Transparent" Margin="70,10,70,0">
+        <ListBox Name="productdata" Background="Transparent" Margin="220,10,220,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Width="100" Foreground="White" Text="{Binding  productName}"></TextBlock>
+                    <components1:CartItemList ProductName="{Binding productName}" PriceVal="{Binding price}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <components1:PopUpWindow Width="450" Height="200" ></components1:PopUpWindow>
         <StackPanel HorizontalAlignment="Center" Margin="0,2,0,0" Grid.Row="1" Orientation="Horizontal">
             <components1:BrowseBackButton Margin="0,0,24,0" Grid.Row="1"/>
-            <components1:AddButton AddBtnClick="AddButton_AddBtnClick" Margin="24,0,0,0" tagName="Checkout"/>
+            <components1:AddButton AddBtnClick="clearCartList" Margin="24,0,24,0" tagName="Clear List"/>
+            <components1:AddButton AddBtnClick="checkout" Margin="24,0,0,0" tagName="Checkout"/>
         </StackPanel>
+        <components1:PopUpWindow CloseEnv="popwindow_CloseEnv"  Width="450" Height="200"  VerticalAlignment="Center" x:Name="popwindow" Grid.Column="1" >
+
+        </components1:PopUpWindow>
     </Grid>
 </Page>

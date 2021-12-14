@@ -31,7 +31,7 @@
         <ListBox Grid.Row="1" Name="productdata" Background="Transparent" Margin="70,10,70,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <components1:UserProductList AddCart="UserProductList_AddCart" Height="200" Price="{Binding price}" ProductName="{Binding productName}" Description="{Binding description}"/>
+                    <components1:UserProductList AddCart="UserProductList_AddCart" Height="200" Price="{Binding price}" Link="{Binding Link}" ProductName="{Binding productName}" Description="{Binding description}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>

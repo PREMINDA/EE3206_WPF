@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              x:Name="TextInput"
              d:DesignHeight="450" d:DesignWidth="800">
-    <TextBox Padding="6" FontSize="24" VerticalAlignment="Stretch" VerticalContentAlignment="{Binding VerticalLoc,ElementName=TextInput}" Text="{Binding TextVal,ElementName=TextInput}">
+    <TextBox TextWrapping="Wrap" Padding="6" FontSize="24" VerticalAlignment="Stretch" VerticalContentAlignment="{Binding VerticalLoc,ElementName=TextInput}" Text="{Binding TextVal,ElementName=TextInput}">
         <TextBox.Resources>
             <Style TargetType="{x:Type Border}">
                 <Setter Property="CornerRadius" Value="12"/>

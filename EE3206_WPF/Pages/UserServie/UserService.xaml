@@ -23,13 +23,17 @@
             <RowDefinition Height="600"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
-        <ListBox Grid.Row="1" Name="servicedata" Background="Transparent" Margin="40,0,40,0">
+        <ListBox Grid.Row="1" Name="servicedata" Background="Transparent" Margin="70,10,70,0">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <components1:UserProductList Height="280" Price="{Binding price}" ProductName="{Binding serviceName}" Description="{Binding description}"/>
+                    <components1:UserProductList Height="200" Link="{Binding Link}" Price="{Binding price}" ProductName="{Binding serviceName}" Description="{Binding description}"/>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <components1:BrowseBackButton Grid.Row="2" Margin="0,3,0,4"/>
     </Grid>
 </Page>
+
+
+
+

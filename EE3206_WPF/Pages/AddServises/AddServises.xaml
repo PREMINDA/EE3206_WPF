@@ -35,7 +35,7 @@
                     <Label Content="DESCRIPTION" Margin="0,24,0,0" Grid.Row="3" Foreground="White" FontSize="28" VerticalAlignment="Top" HorizontalAlignment="Center" Height="42" Width="190" FontFamily="Akrobat"></Label>
                     <components1:CustomeTextInput Grid.Row="1" x:Name="ServiceName" Grid.Column="1" TextVal="" Margin="12,10,45,10"/>
                     <components1:CustomeTextInput PreviewTextInput="CustomeTextInput_PreviewTextInput" x:Name="Price" Grid.Column="1" Grid.Row="2" TextVal="" Margin="12,10,45,10"/>
-                    <components1:CustomeTextInput VerticalLoc="Top" x:Name="Description"  Grid.Column="1" Grid.Row="3" TextVal="" Margin="12,10,45,10"/>
+                    <components1:CustomeTextInput Width="500" VerticalLoc="Top" x:Name="Description"  Grid.Column="1" Grid.Row="3" TextVal="" Margin="12,10,45,10"/>
                     <components1:AddButton AddBtnClick="AddImage" tagName="Add Image" Grid.Column="2" Grid.Row="1"/>
                     <Border Margin="12" CornerRadius="18" Background="WhiteSmoke" Grid.Column="3" Grid.Row="2" Grid.RowSpan="2" >
                         <Image x:Name="image1" ></Image>

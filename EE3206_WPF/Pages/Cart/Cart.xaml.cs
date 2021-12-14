@@ -23,37 +23,65 @@ namespace EE3206_WPF.Pages.Cart
     /// </summary>
     public partial class Cart : Page
     {
+        UserWindow currentWindow;
+        ICollection<OrderItem> orderItems = new List<OrderItem>();
         public Cart()
         {
             InitializeComponent();
-            var w = (UserWindow)Application.Current.Windows[0];
-            User user = (User)w.GetUser();
-            ICollection<OrderItem> orderItems = w.GetOrderItems();
-            ICollection<Product> products = w.GetProducts();
-            string[] asd = {"a","b" };
-            productdata.ItemsSource = products.ToList();
+            currentWindow = (UserWindow)Application.Current.Windows[0];
+            orderItems = currentWindow.GetOrderItems();
+            loadData();
+        }
 
-            using (DataBaseRepository repository = new DataBaseRepository()) 
+        private void checkout(object sender, RoutedEventArgs e)
+        {
+            using (DataBaseRepository repository = new DataBaseRepository())
             {
+                if (orderItems.Count() >= 1)
+                {
+                    User user = (User)currentWindow.GetUser();
+                    Order or = new Order();
+                    User us = new User()
+                    {
+                        ID = user.ID
+                    };
 
-                //Order or = new Order();
-                //User us = new User()
-                //{
-                //    ID = user.ID
-                //};
+                    or.UserID = us.ID;
+                    or.OrderItem = orderItems;
 
-                //or.UserID = us.ID;
-                //or.OrderItem = orderItems;
-
-                //repository.Orders.Add(or);
-                //repository.SaveChanges();
+                   //repository.Orders.Add(or);
+                    //repository.SaveChanges();
+                }
+                else 
+                {
+                    popwindow.TextVal = "You List Is Empty";
+                    popwindow.isOpen = true;
+                }
                 //var l = repository.Orders.Include("OrderItem").ToList();
             }
         }
 
-        private void AddButton_AddBtnClick(object sender, RoutedEventArgs e)
+        private void clearCartList(object sender, RoutedEventArgs e)
         {
+            currentWindow.clearCartList();
+            currentWindow.clearOrderList();
+            clear();
+        }
 
+        private void loadData()
+        {
+            ICollection<Product> products = currentWindow.GetProducts();
+            productdata.ItemsSource = products.ToList();
+        }
+        private void clear()
+        {
+            productdata.ItemsSource = new List<Product>();
+            orderItems = new List<OrderItem>();
+        }
+
+        private void popwindow_CloseEnv(object sender, RoutedEventArgs e)
+        {
+            popwindow.isOpen = false;
         }
     }
 }

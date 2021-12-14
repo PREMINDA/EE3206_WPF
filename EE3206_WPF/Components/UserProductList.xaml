@@ -72,6 +72,9 @@
                 <ColumnDefinition Width="724*"></ColumnDefinition>
                 <ColumnDefinition Width="20*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <Border Width="250" Height="180" CornerRadius="18" Background="WhiteSmoke" Grid.Column="1">
+                <Image Width="240" Height="170"  Source="{Binding Link}"></Image>
+            </Border>
             <Grid Grid.Column="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="62*"/>
@@ -89,8 +92,8 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Foreground="#A500FE" VerticalAlignment="Center" Text="PRICE : " FontFamily="Akrobat SemiBold" FontSize="24"/>
                         <TextBlock VerticalAlignment="Center" Foreground="White" FontFamily="Akrobat SemiBold" FontSize="24" Width="362">
-                        <TextBlock Text="{Binding Price,ElementName=UserProductListItem}"/>
-                        <TextBlock>.00$</TextBlock>
+                            <TextBlock Text="{Binding Price,ElementName=UserProductListItem}"/>
+                            <TextBlock>.00$</TextBlock>
                         </TextBlock>
                     </StackPanel>
                     <Button Click="Button_Click" Foreground="White" Style="{DynamicResource AddButton}" Grid.Column="1" Width="180" Height="60" Margin="117,8,10,9" FontFamily="Akrobat SemiBold" FontSize="22">Add to Cart</Button>

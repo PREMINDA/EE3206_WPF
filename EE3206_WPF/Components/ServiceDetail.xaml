@@ -73,7 +73,7 @@
                 <ColumnDefinition Width="143*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
             <Border Margin="6" Width="160" CornerRadius="18" Background="WhiteSmoke" Grid.Column="1">
-                <Image x:Name="someImage" Source="/Images/product/RAM.jpg" ></Image>
+                <Image Width="130" Height="130"  Source="{Binding Link}"></Image>
             </Border>
             <StackPanel VerticalAlignment="Center" Height="60">
                 <TextBlock HorizontalAlignment="Center" Foreground="#A500FE" Text="ID" FontFamily="Akrobat SemiBold" FontSize="24"/>
