@@ -27,5 +27,12 @@ namespace EE3206_WPF.Models
         [Column("Password")]
         [Required]
         public string Password { get; set; }
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
+
+    
 }

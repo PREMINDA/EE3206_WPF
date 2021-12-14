@@ -49,8 +49,12 @@ namespace EE3206_WPF.Pages.Cart
                     or.UserID = us.ID;
                     or.OrderItem = orderItems;
 
-                   //repository.Orders.Add(or);
-                    //repository.SaveChanges();
+                    repository.Orders.Add(or);
+                    repository.SaveChanges();
+                    clear();
+
+                    popwindow.TextVal = "You successfully checkout your items";
+                    popwindow.isOpen = true;
                 }
                 else 
                 {
@@ -63,8 +67,7 @@ namespace EE3206_WPF.Pages.Cart
 
         private void clearCartList(object sender, RoutedEventArgs e)
         {
-            currentWindow.clearCartList();
-            currentWindow.clearOrderList();
+            
             clear();
         }
 
@@ -75,6 +78,8 @@ namespace EE3206_WPF.Pages.Cart
         }
         private void clear()
         {
+            currentWindow.clearCartList();
+            currentWindow.clearOrderList();
             productdata.ItemsSource = new List<Product>();
             orderItems = new List<OrderItem>();
         }

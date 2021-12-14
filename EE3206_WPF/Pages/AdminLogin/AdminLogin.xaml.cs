@@ -54,7 +54,7 @@ namespace EE3206_WPF.Pages.AdminLogin
                         adminwindow.Show();
 
                         var w = Application.Current.Windows[0];
-                        if (w != null) w.Hide();
+                        if (w != null) w.Close();
 
 
                     }

@@ -16,13 +16,12 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="340"/>
-            <ColumnDefinition Width="340"/>
-            <ColumnDefinition Width="340"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition Width="320"/>
         </Grid.ColumnDefinitions>
-        <components:LandingPageButton  NavClick="LandingPageButton_NavClick"  NavUri="/Pages/UserProduct/UserProduct.xaml"  Grid.Row="1" Grid.Column="1">
+        <components:LandingPageButton  NavClick="LandingPageButton_NavClick"  NavUri="/Pages/UserProduct/UserProduct.xaml"  Grid.Row="1" Grid.Column="0">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource userproduct}"/>
             </components:LandingPageButton.Icon>
@@ -32,7 +31,7 @@
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
-        <components:LandingPageButton  NavClick="LandingPageButton_NavClick"  NavUri="/Pages/UserServie/UserService.xaml"  Grid.Row="1" Grid.Column="2">
+        <components:LandingPageButton  NavClick="LandingPageButton_NavClick"  NavUri="/Pages/UserServie/UserService.xaml"  Grid.Row="1" Grid.Column="1">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource userservice}"/>
             </components:LandingPageButton.Icon>
@@ -42,7 +41,7 @@
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
-        <components:LandingPageButton  NavClick="LandingPageButton_NavClick"  NavUri="/Pages/Cart/Cart.xaml"  Grid.Row="1" Grid.Column="3">
+        <components:LandingPageButton  NavClick="LandingPageButton_NavClick"  NavUri="/Pages/Cart/Cart.xaml"  Grid.Row="1" Grid.Column="2">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource Cart}"/>
             </components:LandingPageButton.Icon>
@@ -52,6 +51,17 @@
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
-        
+
+        <components:LandingPageButton  NavClick="LandingPageButton_NavClick_1"  Grid.Row="1" Grid.Column="3">
+            <components:LandingPageButton.Icon>
+                <Path Fill="White" Height="80" Width="80" Data="{StaticResource logout}"/>
+            </components:LandingPageButton.Icon>
+            <components:LandingPageButton.IconTitle>
+                <TextBlock FontSize="32"  Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
+                        Logout
+                </TextBlock>
+            </components:LandingPageButton.IconTitle>
+        </components:LandingPageButton>
+
     </Grid>
 </Page>

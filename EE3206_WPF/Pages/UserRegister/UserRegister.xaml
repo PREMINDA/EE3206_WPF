@@ -16,12 +16,12 @@
         <Grid Background="#262537">
             <Grid.RowDefinitions>
 
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="499"/>
-                <RowDefinition Height="54"/>
-                <RowDefinition Height="79"/>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="529"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="88"/>
             </Grid.RowDefinitions>
-            <Rectangle VerticalAlignment="Top" Grid.Row="0" Width="100" Height="80" Margin="270,20,270,0">
+            <Rectangle VerticalAlignment="Top" Grid.Row="0" Height="60" Margin="285,20,285,0" Grid.RowSpan="2">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="/assets/logo.png"/>
                 </Rectangle.Fill>

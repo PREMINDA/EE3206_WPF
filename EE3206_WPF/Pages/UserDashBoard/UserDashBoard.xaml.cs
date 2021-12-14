@@ -1,4 +1,5 @@
 ﻿using EE3206_WPF.Components;
+using EE3206_WPF.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,15 @@ namespace EE3206_WPF.Pages.UserDashBoard
             }
         }
 
-       
+        private void LandingPageButton_NavClick_1(object sender, RoutedEventArgs e)
+        {
+
+            CommonWindow commonWindow = new CommonWindow();
+            commonWindow.Show();
+
+            var w = Application.Current.Windows[0];
+            if (w != null) w.Close();
+
+        }
     }
 }

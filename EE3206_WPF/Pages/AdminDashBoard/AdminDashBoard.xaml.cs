@@ -1,6 +1,7 @@
 ﻿using EE3206_WPF.Components;
 using EE3206_WPF.Database;
 using EE3206_WPF.Models;
+using EE3206_WPF.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,6 +44,21 @@ namespace EE3206_WPF.Pages.AdminDashBoard
                 NavigationService.RemoveBackEntry();
             }
 
+        }
+
+        private void logout() 
+        {
+            
+        }
+
+        private void LandingPageButton_NavClick(object sender, RoutedEventArgs e)
+        {
+            CommonWindow commonWindow = new CommonWindow();
+            commonWindow.Show();
+
+      
+            var w = Application.Current.Windows[0];
+            if (w != null) w.Close();
         }
     }
 }
