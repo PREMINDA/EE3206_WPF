@@ -90,17 +90,17 @@ namespace EE3206_WPF.Components
             remove { RemoveHandler(ClickEvent, value); }
         }
 
-
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            RaiseEvent(new RoutedEventArgs(ClickEvent));
+        }
 
         public UserProductList()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            RaiseEvent(new RoutedEventArgs(ClickEvent));
-        }
+        
     }
 
 }

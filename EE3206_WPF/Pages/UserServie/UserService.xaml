@@ -23,16 +23,47 @@
             <RowDefinition Height="600"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
-        <ListBox Grid.Row="1" Name="servicedata" Background="Transparent" Margin="70,10,70,0">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <components1:UserProductList VisibilityITM="Hidden"  Height="200" Link="{Binding Link}" Price="{Binding price}" ProductName="{Binding serviceName}" Description="{Binding description}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="420"/>
+                <ColumnDefinition Width="860"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Foreground="White" Margin="8,12,0,0" Text="Select Your Appoinment Day" FontFamily="Akrobat Black" FontSize="24"/>
+                <DatePicker Grid.Column="0" Margin="8,5,0,8"/>
+                <TextBlock  Foreground="White" Margin="8,0,8,0" Text="Select Your Appoinment Time" FontFamily="Akrobat Black" FontSize="24"/>
+                <StackPanel Orientation="Horizontal" Margin="8,0,8,0">
+
+                    <Border Width="85" CornerRadius="4" Background="#A500FE">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox TextAlignment="Center" x:Name="HH" FontSize="24" Width="40" FontFamily="Akrobat"/>
+                            <TextBlock Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="6.5,0,0,0" Text="HH" FontSize="22" ></TextBlock>
+                        </StackPanel>
+                    </Border>
+                    <Border Margin="20,0,0,0" Width="85" CornerRadius="4" Background="#A500FE">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBox TextAlignment="Center" x:Name="MM" FontSize="24" Width="40" FontFamily="Akrobat"/>
+                            <TextBlock Foreground="White" VerticalAlignment="Center" Margin="3,0,0,0" Text="MM" FontSize="22" Width="41" />
+                        </StackPanel>
+                    </Border>
+
+                </StackPanel>
+            </StackPanel>
+
+
+
+            <ListBox Grid.Column="1" Name="servicedata" Background="Transparent" Margin="10,10,10,0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <components1:UserServiceList MyImageSource="{Binding Link}" ServiceName="{Binding serviceName}" ServiceDescription="{Binding description}" ServicePrice="{Binding price}" />
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
         <components1:BrowseBackButton Grid.Row="2" Margin="0,3,0,4"/>
     </Grid>
 </Page>
+
 
 
 
