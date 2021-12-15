@@ -35,6 +35,7 @@ namespace EE3206_WPF.Pages.UserServie
         public UserService()
         {
             InitializeComponent();
+            timebutton.Content = "AM";
             currentWindow = (UserWindow)Application.Current.Windows[0];
             load();
         }
@@ -61,16 +62,12 @@ namespace EE3206_WPF.Pages.UserServie
 
         private void addDataTOConfirmList(int asd)
         {
-            Service serviceA = new Service()
-            {
-                ID=asd
-            };
+
 
             AppoiServices appoiService = new AppoiServices()
             {
-                Service = serviceA
+                ServiceID = asd
             };
-
             AppoiServices.Add(appoiService);
 
         }
@@ -98,40 +95,89 @@ namespace EE3206_WPF.Pages.UserServie
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var inMyString = datevalue.SelectedDate.Value.ToShortDateString();
+            
             using (DataBaseRepository repository = new DataBaseRepository())
             {
                 if (AppoiServices.Count() >= 1)
                 {
-                    User user = (User)currentWindow.GetUser();
-                    Appoinment ap = new Appoinment();
-                    User us = new User()
+
+                    if (checkISEmpty())
                     {
-                        ID = user.ID
-                    };
+                        popwindow.TextVal = "Fill data first";
+                        popwindow.isOpen = true;
+                    }
+                    else
+                    {
+                        repository.Appoinments.Add(storeModal());
+                        repository.SaveChanges();
+                        clearList();
+                        EmptySetData();
 
-                    ap.UserID = us.ID;
-                    ap.AppoiServices = AppoiServices;
-
-                    repository.Appoinments.Add(ap);
-                    repository.SaveChanges();
-                    clearList();
-
-                    popwindow.TextVal = "You successfully Make an Appoinment";
-                    popwindow.isOpen = true;
+                        popwindow.TextVal = "You successfully Make an Appoinment";
+                        popwindow.isOpen = true;
+                    }    
                 }
                 else
                 {
                     popwindow.TextVal = "You List Is Empty";
                     popwindow.isOpen = true;
                 }
-                //var l = repository.Orders.Include("OrderItem").ToList();
             }
+        }
+
+        private void EmptySetData()
+        {
+            HH.Text = null;
+            MM.Text = null;
+            datevalue.SelectedDate = null;
         }
 
         private void popwindow_CloseEnv(object sender, RoutedEventArgs e)
         {
             popwindow.isOpen = false;
+        }
+
+        private void timebutton_Click(object sender, RoutedEventArgs e)
+        {
+            switch (timebutton.Content)
+            {
+                case "AM":
+                    timebutton.Content = "PM";
+                    break;
+                default:
+                    timebutton.Content = "AM";
+                    break;
+            }
+        }
+
+        private bool checkISEmpty()
+        {
+
+            if (datevalue.SelectedDate == null)
+            {
+                return true;
+            }
+            return String.IsNullOrEmpty(HH.Text) || String.IsNullOrEmpty(MM.Text);
+        }
+
+        private Appoinment storeModal()
+        {
+            User user = (User)currentWindow.GetUser();
+            Appoinment ap = new Appoinment();
+            User us = new User()
+            {
+                ID = user.ID
+            };
+
+            string time = String.Format("{0}:{1} {2}", HH.Text, MM.Text, timebutton.Content);
+
+
+            ap.UserID = us.ID;
+            ap.AppoiServices = AppoiServices;
+            ap.Date = datevalue.SelectedDate.Value.ToShortDateString();
+            ap.Time = time;
+
+            return ap;
         }
     }
 

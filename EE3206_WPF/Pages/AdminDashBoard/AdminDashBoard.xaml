@@ -103,7 +103,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton  NavClick="LandingPageButton_NavClick" Grid.Row="1" Grid.Column="3">
+        <components:LandingPageButton NavClick="NavClick_User"  NavUri="/Pages/AppoinPa/AppoinPa.xaml" Grid.Row="1" Grid.Column="3">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource logout}"/>
             </components:LandingPageButton.Icon>

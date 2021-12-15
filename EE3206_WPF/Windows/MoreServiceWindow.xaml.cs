@@ -18,23 +18,22 @@ using System.Windows.Shapes;
 namespace EE3206_WPF.Windows
 {
     /// <summary>
-    /// Interaction logic for MoreOrderInfo.xaml
+    /// Interaction logic for MoreServiceWindow.xaml
     /// </summary>
-    public partial class MoreOrderInfo : Window
+    public partial class MoreServiceWindow : Window
     {
         User user;
-        public MoreOrderInfo()
+        public MoreServiceWindow()
         {
             InitializeComponent();
         }
 
 
 
-        internal void SetUser(OrderListItem data)
+        internal void setuser(AppoinmentListItem singleservice)
         {
-            
-            int ID = data.OrderID;
-            Order userdata = (Order)data.DataContext;
+            int ID = singleservice.AppoinmentID;
+            Appoinment userdata = (Appoinment)singleservice.DataContext;
             user = userdata.User;
             lodaOrderItem(ID);
         }
@@ -46,11 +45,11 @@ namespace EE3206_WPF.Windows
 
                 //var list = repository.Orders.Include("User").ToList();
                 //var l = repository.Orders.Include("User").ToList();
-                Order asd = repository.Orders.Include("OrderItem").Include("OrderItem.Product").SingleOrDefault(x => x.ID == id);
+                Appoinment asd = repository.Appoinments.Include("AppoiServices").Include("AppoiServices.Service").SingleOrDefault(x => x.ID == id);
                 Name.Text = user.Name;
                 Email.Text = user.Email;
                 Tel.Text = user.TelNum;
-                SinglorederList.ItemsSource = asd.OrderItem.ToList();
+                SinglServiceList.ItemsSource = asd.AppoiServices.ToList();
             }
         }
     }

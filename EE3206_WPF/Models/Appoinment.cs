@@ -19,12 +19,12 @@ namespace EE3206_WPF.Models
 
         [Column("Appoinment_Date")]
         [Required]
-        [MaxLength(10)]
+        [MaxLength(20)]
         public string Date { get; set; }
 
         [Column("Appoinment_Time")]
         [Required]
-        [MaxLength(10)]
+        [MaxLength(20)]
         public string Time { get; set; }
 
 

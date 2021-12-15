@@ -1,6 +1,5 @@
 ﻿using EE3206_WPF.Components;
 using EE3206_WPF.Database;
-using EE3206_WPF.Models;
 using EE3206_WPF.Windows;
 using System;
 using System.Collections.Generic;
@@ -17,22 +16,23 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace EE3206_WPF.Pages.UserOrders
+namespace EE3206_WPF.Pages.AppoinPa
 {
     /// <summary>
-    /// Interaction logic for UserOrders.xaml
+    /// Interaction logic for AppoinPa.xaml
     /// </summary>
-    public partial class UserOrders : Page
+    public partial class AppoinPa : Page
     {
-        public UserOrders()
+        public AppoinPa()
         {
             InitializeComponent();
+
             using (DataBaseRepository repository = new DataBaseRepository())
             {
-                
-                var list = repository.Orders.Include("User").ToList();
+
+                var list = repository.Appoinments.Include("User").ToList();
                 //var l = repository.Orders.Include("User").ToList();
-                oredersData.ItemsSource = list;
+                AppoinmentData.ItemsSource = list;
             }
         }
 
@@ -41,14 +41,15 @@ namespace EE3206_WPF.Pages.UserOrders
 
         }
 
-        private void newdata_SeeMoreList(object sender, RoutedEventArgs e)
+        private void AppoinmentListItem_SeeMoreServiceList(object sender, RoutedEventArgs e)
         {
-            OrderListItem singleorder = (OrderListItem)e.Source;
-            
-            
-           MoreOrderInfo userWindow = new MoreOrderInfo();
-           userWindow.SetUser(singleorder);
-           userWindow.Show();
+
+            AppoinmentListItem singleservice = (AppoinmentListItem)e.Source;
+
+
+            MoreServiceWindow userwindow = new MoreServiceWindow();
+            userwindow.setuser(singleservice);
+            userwindow.Show();
 
         }
     }

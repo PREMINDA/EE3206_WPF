@@ -33,20 +33,6 @@ namespace EE3206_WPF.Components
             DependencyProperty.Register("OrderDetaiID", typeof(int), typeof(SingleOrderDetail), new PropertyMetadata(0));
 
 
-
-
-        public string ImageLink
-        {
-            get { return (string)GetValue(ImageLinkProperty); }
-            set { SetValue(ImageLinkProperty, value); }
-        }
-
-        // Using a DependencyProperty as the backing store for ImageLink.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ImageLinkProperty =
-            DependencyProperty.Register("ImageLink", typeof(string), typeof(SingleOrderDetail), new PropertyMetadata(string.Empty));
-
-
-
         public string OrderProductName
         {
             get { return (string)GetValue(OrderProductNameProperty); }
@@ -69,7 +55,24 @@ namespace EE3206_WPF.Components
         public static readonly DependencyProperty OrderProductPriceProperty =
             DependencyProperty.Register("OrderProductPrice", typeof(int), typeof(SingleOrderDetail), new PropertyMetadata(0));
 
+        public Uri OrderImageSource
+        {
+            get { return (Uri)GetValue(OrderImageSourceProperty); }
+            set { SetValue(OrderImageSourceProperty, value); }
+        }
 
+        public static readonly DependencyProperty OrderImageSourceProperty =
+         DependencyProperty.Register("OrderImageSource",
+        typeof(Uri), typeof(SingleOrderDetail),
+        new FrameworkPropertyMetadata(new PropertyChangedCallback(OnImageSourceChanged)));
+
+        private static void OnImageSourceChanged(DependencyObject sender, DependencyPropertyChangedEventArgs e)
+        {
+
+            SingleOrderDetail userControl = (SingleOrderDetail)sender;
+
+            userControl.OrderImage.Source = new BitmapImage((Uri)e.NewValue);
+        }
 
 
         public SingleOrderDetail()
