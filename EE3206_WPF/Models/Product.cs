@@ -30,6 +30,8 @@ namespace EE3206_WPF.Models
         [Required]
         public string Link { get; set; }
 
+        
+
         public override string ToString()
         {
             return productName;

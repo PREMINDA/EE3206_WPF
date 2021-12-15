@@ -8,18 +8,14 @@ using System.Threading.Tasks;
 
 namespace EE3206_WPF.Models
 {
-    class Appointment
+    public class AppoiServices
     {
         [Key]
         public int ID { get; set; }
 
 
-
-        [ForeignKey("User")]
-        public int UserID { get; set; }
-        public virtual User User { get; set; }
-
-
-        public ICollection<OrderItem> OrderItem { get; set; }
+        [ForeignKey("Service")]
+        public int ServiceID { get; set; }
+        public virtual Service Service { get; set; }
     }
 }

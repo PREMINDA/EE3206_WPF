@@ -16,6 +16,8 @@ namespace EE3206_WPF.Database
         public DbSet<User> Users { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<AppoiServices> AppoiServices { get; set; }
+        public DbSet<Appoinment> Appoinments { get; set; }
 
 
     }
