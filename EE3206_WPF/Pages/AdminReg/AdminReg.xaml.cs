@@ -41,11 +41,11 @@ namespace EE3206_WPF.Pages.AdminReg
                     Name = UserName.EnteredValue,
                     Email = Email.EnteredValue,
                     TelNum = TelephoneNum.EnteredValue,
-                    Password = Password.EnteredValue
+                    Password = Password.Password
 
                 };
 
-                if (String.IsNullOrEmpty(UserName.EnteredValue) || String.IsNullOrEmpty(Email.EnteredValue) || String.IsNullOrEmpty(TelephoneNum.EnteredValue) || String.IsNullOrEmpty(Password.EnteredValue))
+                if (String.IsNullOrEmpty(UserName.EnteredValue) || String.IsNullOrEmpty(Email.EnteredValue) || String.IsNullOrEmpty(TelephoneNum.EnteredValue) || String.IsNullOrEmpty(Password.Password))
                 {
                     popwindow.TextVal = "Every thing should be fill";
                     popwindow.isOpen = true;
@@ -55,7 +55,7 @@ namespace EE3206_WPF.Pages.AdminReg
                     popwindow.TextVal = "Email is not valid";
                     popwindow.isOpen = true;
                 }
-                else if (Password.EnteredValue != RePassword.EnteredValue)
+                else if (Password.Password != RePassword.Password)
                 {
                     popwindow.TextVal = "Password Not Matched";
                     popwindow.isOpen = true;

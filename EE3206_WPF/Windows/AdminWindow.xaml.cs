@@ -32,5 +32,15 @@ namespace EE3206_WPF.Windows
             admin = (Admin)newuser;
             _userName.Text = admin.Name;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            CommonWindow commonWindow = new CommonWindow();
+            commonWindow.Show();
+
+
+            var w = Application.Current.Windows[0];
+            if (w != null) w.Close();
+        }
     }
 }

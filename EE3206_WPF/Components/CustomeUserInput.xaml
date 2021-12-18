@@ -8,6 +8,50 @@
              x:Name="UserInput"
              d:DesignHeight="60" d:DesignWidth="460">
     <UserControl.Resources>
+        <SolidColorBrush x:Key="TextBox.Static.Border" Color="#FFABAdB3"/>
+        <SolidColorBrush x:Key="TextBox.MouseOver.Border" Color="#FF7EB4EA"/>
+        <SolidColorBrush x:Key="TextBox.Focus.Border" Color="#FF569DE5"/>
+        <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource TextBox.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="true"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border"  BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Opacity" TargetName="border" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource TextBox.Focus.Border}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="true"/>
+                        <Condition Property="IsSelectionActive" Value="false"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
         <SolidColorBrush x:Key="TextBox.Static.Border3" Color="#FFABAdB3"/>
         <SolidColorBrush x:Key="TextBox.MouseOver.Border3" Color="#FF7EB4EA"/>
         <SolidColorBrush x:Key="TextBox.Focus.Border3" Color="#FF569DE5"/>
@@ -76,7 +120,10 @@
                     <ColumnDefinition  Width="251*"/>
                     <ColumnDefinition Width="29*"/>
                 </Grid.ColumnDefinitions>
-                <PasswordBox x:Name="_passwordBox" PasswordChanged="_passwordBox_PasswordChanged"  VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="20 0 0 0"  FontSize="28" Style="{DynamicResource UserInputPassword}" />
+                <PasswordBox LostFocus="_passwordBox_LostFocus" x:Name="_passwordBox" PasswordChanged="_passwordBox_PasswordChanged" 
+                             VerticalAlignment="Stretch" VerticalContentAlignment="Center" Margin="20 0 0 0"  FontSize="28" Style="{DynamicResource UserInputPassword}" />
+                <TextBox Foreground="Gray" GotFocus="place_GotFocus"  Text="{Binding PlaceValuPassword,ElementName=UserInput}"  Style="{DynamicResource TextBoxStyle}"
+                         Margin="20 0 0 0" VerticalAlignment="Stretch" x:Name="place" VerticalContentAlignment="Center"    FontSize="28" ></TextBox>
                 <ContentControl  Grid.Column="1" Content="{Binding Icon,ElementName=UserInput}"/>
                 <!--<Path Grid.Column="1"  Data="{StaticResource pass}" Width="35"/>-->
             </Grid>

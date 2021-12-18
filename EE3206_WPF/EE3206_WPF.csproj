@@ -13,6 +13,7 @@
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="Gu.Wpf.Adorners" Version="2.1.1" />
+    <PackageReference Include="MailKit" Version="3.0.0" />
   </ItemGroup>
 
   <!--<ItemGroup>

@@ -14,6 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Net;
+using System.Net.Mail;
 
 namespace EE3206_WPF.Windows
 {
@@ -51,6 +53,10 @@ namespace EE3206_WPF.Windows
                 Tel.Text = user.TelNum;
                 SinglServiceList.ItemsSource = asd.AppoiServices.ToList();
             }
+
+            
         }
+
+     
     }
 }

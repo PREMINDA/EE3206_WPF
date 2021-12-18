@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:EE3206_WPF.Windows"
         mc:Ignorable="d"
         xmlns:components1="clr-namespace:EE3206_WPF.Components"
-        Title="MoreServiceWindow" Height="1000" Width="850">
+        Title="MoreServiceWindow" Height="800" Width="850">
     <Grid Background="#262537">
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
             <RowDefinition Height="83"/>
             <RowDefinition Height="7"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="2" Background="#743fbf"></Border>
         <Grid Grid.Row="1">

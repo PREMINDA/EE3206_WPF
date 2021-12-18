@@ -54,7 +54,7 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <components1:BrowseBackButton Grid.Column="1"/>
-                <components1:AddButton AddBtnClick="AddBtnClick1" tagName="Add Product" Grid.Column="2"/>
+                <components1:AddButton AddBtnClick="AddBtnClick1" tagName="Add Sercice" Grid.Column="2"/>
             </Grid>
         </Grid>
     </Grid>

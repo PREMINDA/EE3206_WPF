@@ -92,7 +92,7 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton NavClick="NavClick_User"  NavUri="/Pages/Management/Managment.xaml" Grid.Row="1" Grid.Column="2">
+        <components:LandingPageButton NavClick="NavClick_User"  NavUri="/Pages/Management/Managment.xaml" Grid.Row="1" Grid.Column="3">
             <components:LandingPageButton.Icon>
                 <Path Fill="White" Height="80" Width="80" Data="{StaticResource services}"/>
             </components:LandingPageButton.Icon>
@@ -103,13 +103,13 @@
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>
 
-        <components:LandingPageButton NavClick="NavClick_User"  NavUri="/Pages/AppoinPa/AppoinPa.xaml" Grid.Row="1" Grid.Column="3">
+        <components:LandingPageButton NavClick="NavClick_User"  NavUri="/Pages/AppoinPa/AppoinPa.xaml" Grid.Row="1" Grid.Column="2">
             <components:LandingPageButton.Icon>
-                <Path Fill="White" Height="80" Width="80" Data="{StaticResource logout}"/>
+                <Path Fill="White" Height="80" Width="80" Data="{StaticResource Appoin}"/>
             </components:LandingPageButton.Icon>
             <components:LandingPageButton.IconTitle>
                 <TextBlock FontSize="32" Foreground="White" Margin="0 5 0 0" HorizontalAlignment="Center" Grid.Row="6">
-                        Logout
+                        Appoinments
                 </TextBlock>
             </components:LandingPageButton.IconTitle>
         </components:LandingPageButton>

@@ -48,29 +48,29 @@
                         <RowDefinition Height="60"/>
 
                     </Grid.RowDefinitions>
-                    <components1:TextInput x:Name="UserName" Grid.Row="0">
+                    <components1:TextInput PlaceValu="Name" x:Name="UserName" Grid.Row="0">
                         <components1:TextInput.Icon>
                             <Path  Data="{StaticResource User}" Width="28"/>
                         </components1:TextInput.Icon>
                     </components1:TextInput>
-                    <components1:TextInput  x:Name="Email" Grid.Row="2">
+                    <components1:TextInput PlaceValu="Email"  x:Name="Email" Grid.Row="2">
                         <components1:TextInput.Icon>
                             <Path  Data="{StaticResource Email}" Width="28"/>
                         </components1:TextInput.Icon>
                     </components1:TextInput>
-                    <components1:TextInput  x:Name="TelephoneNum" Grid.Row="4">
+                    <components1:TextInput PlaceValu="Telephone Number"  x:Name="TelephoneNum" Grid.Row="4">
                         <components1:TextInput.Icon>
                             <Path  Data="{StaticResource Mobile}" Width="28"/>
                         </components1:TextInput.Icon>
                     </components1:TextInput>
 
-                    <components1:CustomeUserInput Password="{Binding Password,UpdateSourceTrigger=PropertyChanged}"  x:Name="Passwordin" Grid.Row="6">
+                    <components1:CustomeUserInput PlaceValuPassword="Password" Password="{Binding Password,UpdateSourceTrigger=PropertyChanged}"  x:Name="Passwordin" Grid.Row="6">
                         <components1:CustomeUserInput.Icon>
                             <Path   Data="{StaticResource pass}" Width="28"/>
                         </components1:CustomeUserInput.Icon>
                     </components1:CustomeUserInput>
 
-                    <components1:CustomeUserInput  x:Name="RePassword" Grid.Row="8">
+                    <components1:CustomeUserInput PlaceValuPassword="Enter Password Again"  x:Name="RePassword" Grid.Row="8">
                         <components1:CustomeUserInput.Icon>
                             <Path   Data="{StaticResource rEenter}" Width="28"/>
                         </components1:CustomeUserInput.Icon>

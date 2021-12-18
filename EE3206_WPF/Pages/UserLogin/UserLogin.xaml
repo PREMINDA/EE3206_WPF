@@ -42,13 +42,13 @@
                         <RowDefinition Height="60"/>
 
                     </Grid.RowDefinitions>
-                    <components1:TextInput x:Name="_UserName" Grid.Row="0">
+                    <components1:TextInput PlaceValu="Email" x:Name="_UserName" Grid.Row="0">
                         <components1:TextInput.Icon>
                             <Path  Data="{StaticResource Email}" Width="28"/>
                         </components1:TextInput.Icon>
                     </components1:TextInput>
 
-                    <components1:CustomeUserInput x:Name="_UserPassword" Grid.Row="2">
+                    <components1:CustomeUserInput PlaceValuPassword="Password" x:Name="_UserPassword" Grid.Row="2">
                         <components1:CustomeUserInput.Icon>
                             <Path   Data="{StaticResource pass}" Width="28"/>
                         </components1:CustomeUserInput.Icon>

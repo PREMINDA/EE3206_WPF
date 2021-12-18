@@ -22,6 +22,18 @@ namespace EE3206_WPF.Components
     {
 
 
+        public string PlaceValuPassword
+        {
+            get { return (string)GetValue(PlaceValuPasswordProperty); }
+            set { SetValue(PlaceValuPasswordProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for PlaceValuPassword.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PlaceValuPasswordProperty =
+            DependencyProperty.Register("PlaceValuPassword", typeof(string), typeof(CustomeUserInput), new PropertyMetadata(string.Empty));
+
+
+
 
         public string Password
         {
@@ -53,6 +65,23 @@ namespace EE3206_WPF.Components
         private void _passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
         {
             Password = _passwordBox.Password;
+        }
+
+        private void _passwordBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(Password))
+            {
+                _passwordBox.Visibility = System.Windows.Visibility.Collapsed;
+                place.Visibility = System.Windows.Visibility.Visible;
+
+            }
+        }
+
+        private void place_GotFocus(object sender, RoutedEventArgs e)
+        {
+            place.Visibility = System.Windows.Visibility.Collapsed;
+            _passwordBox.Visibility = System.Windows.Visibility.Visible;
+            _passwordBox.Focus();
         }
     }
 }

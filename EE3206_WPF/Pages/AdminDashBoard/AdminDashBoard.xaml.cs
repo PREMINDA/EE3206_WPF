@@ -51,14 +51,5 @@ namespace EE3206_WPF.Pages.AdminDashBoard
             
         }
 
-        private void LandingPageButton_NavClick(object sender, RoutedEventArgs e)
-        {
-            CommonWindow commonWindow = new CommonWindow();
-            commonWindow.Show();
-
-      
-            var w = Application.Current.Windows[0];
-            if (w != null) w.Close();
-        }
     }
 }

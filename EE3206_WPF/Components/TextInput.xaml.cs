@@ -20,6 +20,21 @@ namespace EE3206_WPF.Components
     /// </summary>
     public partial class TextInput : UserControl
     {
+
+
+
+        public string PlaceValu
+        {
+            get { return (string)GetValue(PlaceValuProperty); }
+            set { SetValue(PlaceValuProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for PlaceValu.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty PlaceValuProperty =
+            DependencyProperty.Register("PlaceValu", typeof(string), typeof(TextInput), new PropertyMetadata(""));
+
+
+
         public object Icon
         {
             get { return (object)GetValue(IconProperty); }
@@ -47,6 +62,27 @@ namespace EE3206_WPF.Components
         public TextInput()
         {
             InitializeComponent();
+        
+
+
+        }
+
+
+        private void value_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrEmpty(value.Text))
+            {
+                value.Visibility = System.Windows.Visibility.Collapsed;
+                place.Visibility = System.Windows.Visibility.Visible;
+                
+            }
+        }
+
+        private void place_GotFocus(object sender, RoutedEventArgs e)
+        {
+            place.Visibility = System.Windows.Visibility.Collapsed;
+            value.Visibility = System.Windows.Visibility.Visible;
+            value.Focus();
         }
     }
 }
